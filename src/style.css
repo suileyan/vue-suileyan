@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@plugin "daisyui";
+
+:root {
+  --bg-gradient:
+    radial-gradient(1200px 800px at top right, rgba(79, 70, 229, 0.25), transparent 60%),
+    radial-gradient(800px 500px at bottom left, rgba(16, 185, 129, 0.2), transparent 60%);
+}
+
+/* Let body grow with content. Avoid forcing 100% height, which clips background below the fold */
+html {
+  @apply bg-base-100;
+}
+
+body {
+  /* Use DaisyUI theme tokens so theme toggle is visible */
+  @apply antialiased text-base-content bg-base-100;
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+}
+
+.container-page {
+  /* Make the container span full width, then center via auto margins + max width */
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.glass {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.15));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Theme circular reveal using View Transitions API */
+:root {
+  view-transition-name: theme;
+}
+@keyframes vt-clip-in {
+  from {
+    clip-path: circle(0px at var(--vt-cx, 50%) var(--vt-cy, 50%));
+  }
+  to {
+    clip-path: circle(var(--vt-r-in, var(--vt-r, 150%)) at var(--vt-cx, 50%) var(--vt-cy, 50%));
+  }
+}
+@keyframes vt-clip-out {
+  from {
+    clip-path: circle(var(--vt-r-out, var(--vt-r, 150%)) at var(--vt-cx, 50%) var(--vt-cy, 50%));
+  }
+  to {
+    clip-path: circle(0px at var(--vt-cx, 50%) var(--vt-cy, 50%));
+  }
+}
+/* Support independent timings/easings for in/out animations (fallback to unified vars if missing) */
+::view-transition-new(theme) {
+  animation: vt-clip-in var(--vt-in-duration, var(--vt-duration, 400ms))
+    var(--vt-in-easing, var(--vt-easing, ease-in-out)) both;
+}
+::view-transition-old(theme) {
+  animation: vt-clip-out var(--vt-out-duration, var(--vt-duration, 400ms))
+    var(--vt-out-easing, var(--vt-easing, ease-in-out)) both;
+}

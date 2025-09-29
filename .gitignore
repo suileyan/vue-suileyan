@@ -1,0 +1,38 @@
+node_modules
+dist
+.DS_Store
+*.log
+yarn-error.log*
+npm-debug.log*
+pnpm-debug.log*
+*.local
+.idea
+.vscode/*
+!/.vscode/extensions.json
+.husky/_
+.env
+.env.*
+
+# Auto-generated translations (vite-auto-i18n)
+lang/
+
+# TypeScript / ESLint caches
+*.tsbuildinfo
+.eslintcache
+
+# OS junk
+Thumbs.db
+
+# Package manager lockfiles (use yarn.lock in this repo)
+/package-lock.json
+/pnpm-lock.yaml
+
+# Local tooling repo (not needed in app)
+_auto_i18n_repo/
+
+# Vite cache (rarely used at root, but safe to ignore)
+.vite
+
+# Large archives / build artifacts
+*.zip
+*.tar.gz
