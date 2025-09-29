@@ -1,4 +1,4 @@
-# SuiKit Base · Vue 3 + Vite + TS 模板
+# Suileyan · Vue 3 + Vite + TS 模板
 
 一个开箱即用的前端模板，集成：Tailwind CSS v4、自动路由与布局（vite-plugin-pages / vite-plugin-vue-layouts）、Pinia、Alova（axios/xhr 适配）、ECharts、GSAP、rrweb 非侵入埋点、NProgress、Icons 按需；工程化：ESLint(Flat) + Prettier、husky + lint-staged、严格类型与规范化产物目录。
 
