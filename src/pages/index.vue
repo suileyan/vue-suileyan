@@ -9,9 +9,8 @@
           Vue 3 + Vite + Tailwind + Pinia + Alova
         </div>
         <h2 ref="titleEl" class="mt-6 text-4xl/tight sm:text-5xl/tight font-extrabold">
-          现代化前端基座，
-          <span
-            class="bg-gradient-to-r from-primary-600 to-emerald-500 dark:from-primary-300 dark:to-emerald-200 bg-clip-text text-transparent drop-shadow"
+          现代化前端基座，<span
+            class="gradient-text bg-gradient-to-r bg-clip-text text-transparent drop-shadow"
             aria-label="高效与优雅"
             >高效与优雅</span
           >
@@ -22,7 +21,7 @@
         <div class="mt-8 flex gap-4">
           <RouterLink
             to="/about"
-            class="px-5 py-3 rounded-lg bg-primary-600 text-white shadow hover:bg-primary-500 transition"
+            class="px-5 py-3 rounded-lg bg-primary-600 shadow hover:bg-primary-500 transition"
           >
             快速开始
           </RouterLink>
@@ -123,7 +122,25 @@
   })
 </script>
 
-<style scoped></style>
+<style scoped>
+  .gradient-text {
+    background-image: linear-gradient(
+      to right,
+      rgba(99, 102, 241, 0.7),
+      rgba(99, 102, 241, 0.85),
+      rgba(16, 185, 129, 1)
+    );
+  }
+
+  .dark .gradient-text {
+    background-image: linear-gradient(
+      to right,
+      rgba(129, 140, 248, 0.7),
+      rgba(129, 140, 248, 0.85),
+      rgba(16, 185, 129, 1)
+    );
+  }
+</style>
 
 <route lang="json">
 { "meta": { "title": "首页" } }

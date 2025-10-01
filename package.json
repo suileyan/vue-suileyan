@@ -78,6 +78,7 @@
     "vite-auto-i18n-plugin": "^1.1.9",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-inspect": "^11.3.3",
+    "vite-plugin-ops": "^0.1.1",
     "vite-plugin-pages": "^0.33.1",
     "vite-plugin-pwa": "^1.0.3",
     "vite-plugin-vue-layouts": "^0.11.0",

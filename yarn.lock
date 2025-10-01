@@ -5374,6 +5374,11 @@ vite-plugin-inspect@^11.3.3:
     unplugin-utils "^0.3.0"
     vite-dev-rpc "^1.1.0"
 
+vite-plugin-ops@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-ops/-/vite-plugin-ops-0.1.1.tgz#2a083f1bbdf409362d16d1cf01ce0938505dc6d8"
+  integrity sha512-9fdkkgFTkOYcnW/bhSlUFIiYtalPyJbL+nRbzflOhkrOsFo6GTvv2QCHYIOW02xgHW9fp/4s/ptQSAVtAXax0g==
+
 vite-plugin-pages@^0.33.1:
   version "0.33.1"
   resolved "https://registry.yarnpkg.com/vite-plugin-pages/-/vite-plugin-pages-0.33.1.tgz#68d5da84497824be6fc535932b3d1994351cbc12"

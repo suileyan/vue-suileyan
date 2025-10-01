@@ -18,6 +18,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import viteCompression from 'vite-plugin-compression'
 import { VitePWA } from 'vite-plugin-pwa'
 import { fileURLToPath, URL } from 'node:url'
+import ops from 'vite-plugin-ops'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
@@ -133,6 +134,7 @@ export default defineConfig(({ mode }) => {
             }),
           ]
         : []),
+      ops({ strategy: 'conservative' }),
     ],
     resolve: {
       alias: {
@@ -159,34 +161,6 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       assetsDir: 'assets',
-      rollupOptions: {
-        output: {
-          entryFileNames: 'js/[name]-[hash].js',
-          chunkFileNames: 'js/[name]-[hash].js',
-          assetFileNames: (assetInfo) => {
-            const name = assetInfo.name ?? ''
-            const ext = name.split('.').pop()?.toLowerCase()
-            if (ext === 'css') return 'css/[name]-[hash][extname]'
-            if (['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp', 'avif'].includes(ext ?? ''))
-              return 'img/[name]-[hash][extname]'
-            if (['woff', 'woff2', 'eot', 'ttf', 'otf'].includes(ext ?? ''))
-              return 'fonts/[name]-[hash][extname]'
-            return 'assets/[name]-[hash][extname]'
-          },
-          manualChunks(id) {
-            if (id.includes('node_modules')) {
-              if (id.includes('vue') || id.includes('pinia')) return 'vue'
-              if (id.includes('echarts')) return 'echarts'
-              if (id.includes('chart.js') || id.includes('vue-chartjs')) return 'chartjs'
-              if (id.includes('gsap')) return 'gsap'
-              if (id.includes('alova') || id.includes('axios')) return 'network'
-              if (id.includes('@vueuse')) return 'vueuse'
-              return 'vendor'
-            }
-          },
-        },
-        // 这里尽量保持 Rollup 插件最小化；如需可视化分析，已在上方 Vite 插件中按需启用 visualizer
-      },
     },
   }
 })

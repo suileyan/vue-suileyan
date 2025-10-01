@@ -36,3 +36,4 @@ _auto_i18n_repo/
 # Large archives / build artifacts
 *.zip
 *.tar.gz
+CLAUDE.md
