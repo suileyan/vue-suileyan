@@ -25,6 +25,10 @@
 
     /* 与打包工具和现代 TS 对齐的模块/输出行为 */
     "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "verbatimModuleSyntax": true,
     "useDefineForClassFields": true,
     "forceConsistentCasingInFileNames": true,

@@ -2,10 +2,11 @@
   <div class="min-h-screen flex flex-col">
     <header class="container-page py-6 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div
-          class="rounded-lg shadow bg-cover bg-center"
-          style="width: 104px; height: 50px; background-image: url('/favicon.svg')"
-          aria-label="Logo"
+        <img
+          src="/favicon.svg"
+          alt="Logo"
+          class="rounded-lg shadow object-cover object-center"
+          style="width: 104px; height: 50px"
         />
       </div>
       <div class="flex items-center gap-5 text-sm">
