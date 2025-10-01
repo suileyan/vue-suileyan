@@ -9,7 +9,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BarChart: typeof import('./components/charts/BarChart.vue')['default']
-    IHeroiconsSparkles20Solid: typeof import('~icons/heroicons/sparkles20-solid')['default']
     LineChart: typeof import('./components/charts/LineChart.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

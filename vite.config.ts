@@ -76,34 +76,34 @@ export default defineConfig(({ mode }) => {
         brotliSize: true,
         open: false,
       }) as any,
-      VitePWA({
-        registerType: 'autoUpdate',
-        includeAssets: ['favicon.svg'],
-        manifest: {
-          name: 'SuiKit Base',
-          short_name: 'SuiKit',
-          description: 'Vue 3 base template with Vite + Tailwind + Pinia + Alova',
-          theme_color: '#0f172a',
-          background_color: '#0f172a',
-          display: 'standalone',
-          scope: '/',
-          start_url: '/',
-          icons: [
-            { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
-            { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
-            {
-              src: 'pwa-512x512-maskable.png',
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'any maskable',
-            },
-          ],
-        },
-        workbox: {
-          globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
-          navigateFallback: '/offline.html',
-        },
-      }),
+      // VitePWA({
+      //   registerType: 'autoUpdate',
+      //   includeAssets: ['favicon.svg'],
+      //   manifest: {
+      //     name: 'SuiKit Base',
+      //     short_name: 'SuiKit',
+      //     description: 'Vue 3 base template with Vite + Tailwind + Pinia + Alova',
+      //     theme_color: '#0f172a',
+      //     background_color: '#0f172a',
+      //     display: 'standalone',
+      //     scope: '/',
+      //     start_url: '/',
+      //     icons: [
+      //       { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
+      //       { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
+      //       {
+      //         src: 'pwa-512x512-maskable.png',
+      //         sizes: '512x512',
+      //         type: 'image/png',
+      //         purpose: 'any maskable',
+      //       },
+      //     ],
+      //   },
+      //   workbox: {
+      //     globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
+      //     navigateFallback: '/offline.html',
+      //   },
+      // }),
       ...(enableAutoI18n
         ? [
             AutoI18n({
