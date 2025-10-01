@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router'
 import { createPinia } from 'pinia'
 import { initRRWeb } from './plugins/rrweb'
-import { registerSW } from 'virtual:pwa-register'
+// import { registerSW } from 'virtual:pwa-register'
 
 // 开发环境启动 MSW 进行 API 模拟（非侵入）
 if (import.meta.env.DEV && import.meta.env['VITE_MSW'] !== 'false') {
@@ -30,7 +30,7 @@ initRRWeb()
 app.mount('#app')
 
 // 注册 PWA
-void registerSW({ immediate: true })
+// void registerSW({ immediate: true })
 // 自动 i18n 运行时（由 vite-plugin-auto-i18n 生成），受 VITE_AUTO_I18N 控制
 if (import.meta.env['VITE_AUTO_I18N'] === 'true') {
   // @ts-ignore

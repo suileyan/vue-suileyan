@@ -16,7 +16,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Inspect from 'vite-plugin-inspect'
 import { visualizer } from 'rollup-plugin-visualizer'
 import viteCompression from 'vite-plugin-compression'
-import { VitePWA } from 'vite-plugin-pwa'
+// import { VitePWA } from 'vite-plugin-pwa'
 import { fileURLToPath, URL } from 'node:url'
 import ops from 'vite-plugin-ops'
 
