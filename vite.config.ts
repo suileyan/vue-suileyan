@@ -40,7 +40,7 @@ const i18nPlugin = AutoI18n({
 // https://vite.dev/config/
 export default defineConfig(() => {
   return {
-    base: process.env.VITE_BASE ?? '/',
+    base: process.env.VITE_BASE ?? '/vue-suileyan/',
     plugins: [
       vue({
         template: {
