@@ -36,10 +36,15 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Upload dist artifact
+      - name: Move dist to docs
+        run: |
+          mkdir -p docs
+          mv dist/* docs/ || true
+
+      - name: Upload docs artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: docs
 
   deploy:
     needs: build
