@@ -40,6 +40,7 @@ jobs:
         run: |
           mkdir -p docs
           mv dist/* docs/ || true
+          touch docs/.nojekyll
 
       - name: Upload docs artifact
         uses: actions/upload-pages-artifact@v3
