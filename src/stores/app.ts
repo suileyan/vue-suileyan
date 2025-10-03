@@ -4,7 +4,7 @@ export const useAppStore = defineStore('app', {
   state: () => ({
     theme: (localStorage.getItem('theme') as 'light' | 'dark') || 'light',
     user: null as null | { name: string },
-    lang: (localStorage.getItem('lang') as 'zhcn' | 'en') || 'zhcn',
+    lang: (localStorage.getItem('lang') as string) || 'zhcn',
     langVersion: 0,
     // 主题切换的视图过渡选项（进入/退出参数可分别配置）
     themeTransition: {
@@ -84,16 +84,10 @@ export const useAppStore = defineStore('app', {
       document.documentElement.classList.toggle('dark', theme === 'dark')
       document.documentElement.setAttribute('data-theme', theme)
     },
-    setLang(lang: 'zhcn' | 'en') {
+    setLang(lang: string) {
       this.lang = lang
-      try {
-        // auto-i18n 运行时 API：即时切换语言
-        // @ts-ignore
-        window.$changeLang?.(lang)
-      } catch (_err) {
-        // 有意忽略切换语言时的运行时异常
-      }
-      localStorage.setItem('lang', lang)
+      window.localStorage.setItem('lang', lang)
+      window.location.reload()
       this.langVersion++
     },
   },

@@ -41,8 +41,10 @@
           class="rounded border border-base-300 bg-base-100 text-base-content px-2 py-1 focus:outline-none focus:border-primary hover:bg-base-200"
           @change="onLangChange($event)"
         >
-          <option value="zhcn" :selected="app.lang === 'zhcn'">中文</option>
-          <option value="en" :selected="app.lang === 'en'">English</option>
+          <option value="zhcn" :selected="app.lang === 'zhcn'">{{ raw('中文') }}</option>
+          <option value="en" :selected="app.lang === 'en'">{{ raw('English') }}</option>
+          <option value="ko" :selected="app.lang === 'ko'">{{ raw('한국어') }}</option>
+          <option value="ja" :selected="app.lang === 'ja'">{{ raw('日本語') }}</option>
         </select>
       </div>
     </header>
@@ -59,11 +61,12 @@
 
 <script setup lang="ts">
   import { useAppStore } from '@/stores/app'
+  import { raw } from '@/utils/noTrans'
   const year = new Date().getFullYear()
   const app = useAppStore()
 
   function onLangChange(e: Event) {
-    const value = (e.target as HTMLSelectElement).value as 'zhcn' | 'en'
+    const value = (e.target as HTMLSelectElement).value as string
     app.setLang(value)
   }
 </script>
