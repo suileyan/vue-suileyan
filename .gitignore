@@ -13,8 +13,6 @@ pnpm-debug.log*
 .env
 .env.*
 
-# Auto-generated translations (vite-auto-i18n)
-lang/
 
 # TypeScript / ESLint caches
 *.tsbuildinfo
