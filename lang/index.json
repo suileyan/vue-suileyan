@@ -1,1 +1,734 @@
-{}
+{
+  "189pxm5": {
+    "zh-cn": "MSW启动",
+    "en": "MSW startup",
+    "ko": "msw 시작",
+    "ja": "MSW起動します"
+  },
+  "puhyq48": {
+    "zh-cn": "rrweb初始化",
+    "en": "rrweb initialization",
+    "ko": "rrweb 초기화",
+    "ja": "rrweb初期化です"
+  },
+  "nndeajh": {
+    "zh-cn": "网络连接失败，请检查网络设置后重试",
+    "en": "The network connection failed. Please check the network Settings and try again",
+    "ko": "네트워크 연결이 실패했습니다. 네트워크 설정을 확인하시고 다시 시도하십시오",
+    "ja": "ネットワークの接続に失敗しました。ネットワークの設定を確認して再試行してください。"
+  },
+  "mxw82vd": {
+    "zh-cn": "服务器请求失败，请稍后重试",
+    "en": "The server request failed. Please try again later",
+    "ko": "서버 요청이 실패했습니다. 나중에 다시 시도하십시오",
+    "ja": "サーバーからのリクエストが失敗しましたので、後ほどリトライをお願いします。"
+  },
+  "jbc4y8d": {
+    "zh-cn": "输入数据有误，请检查后重试",
+    "en": "The input data is incorrect. Please check and try again",
+    "ko": "입력 데이터에 오류가 있습니다. 확인 후 다시 시도하십시오",
+    "ja": "入力データに誤りがありますので、チェックして再試行してください"
+  },
+  "vo8snka": {
+    "zh-cn": "系统繁忙，请稍后重试",
+    "en": "The system is busy. Please try again later",
+    "ko": "시스템이 사용 중입니다. 나중에 다시 시도하십시오",
+    "ja": "システムが混雑していますので、後ほど再試行をお願いします。"
+  },
+  "oegb2": {
+    "zh-cn": "请求",
+    "en": "Request",
+    "ko": "청구",
+    "ja": "お願いします"
+  },
+  "diprg14": {
+    "zh-cn": "未知错误",
+    "en": "Unknown error",
+    "ko": "알 수 없는 오류",
+    "ja": "未知の誤りです"
+  },
+  "qbb3an8": {
+    "zh-cn": "操作失败，已重试",
+    "en": "The operation failed and has been retried",
+    "ko": "작업이 실패했습니다. 다시 시도했습니다",
+    "ja": "操作に失敗し,再試行しました"
+  },
+  "foxdz3": {
+    "zh-cn": "次: ",
+    "en": "Second time",
+    "ko": "차:",
+    "ja": "次です。"
+  },
+  "ns7y94": {
+    "zh-cn": " 首页 ",
+    "en": "Home Page",
+    "ko": "첫 페이지",
+    "ja": "トップページです"
+  },
+  "dycd24": {
+    "zh-cn": " 图表 ",
+    "en": "Chart",
+    "ko": "도표",
+    "ja": "グラフです"
+  },
+  "d87v14": {
+    "zh-cn": " 动画 ",
+    "en": "Animation",
+    "ko": "애니메이션",
+    "ja": "アニメーション"
+  },
+  "kxvhv4": {
+    "zh-cn": " 表单 ",
+    "en": "Form",
+    "ko": "폼",
+    "ja": "フォーム"
+  },
+  "jiaoe4": {
+    "zh-cn": " 组件 ",
+    "en": "Component",
+    "ko": "구성 요소",
+    "ja": "コンポーネントです"
+  },
+  "l1fho4": {
+    "zh-cn": " 表格 ",
+    "en": "Table",
+    "ko": "도표",
+    "ja": "表です"
+  },
+  "cv9wl4": {
+    "zh-cn": " 关于 ",
+    "en": "About",
+    "ko": "관",
+    "ja": "についてです"
+  },
+  "ls94w69": {
+    "zh-cn": " 现代化前端基座，",
+    "en": "Modern front-end base",
+    "ko": "최첨단 프론트 엔드 받침대는",
+    "ja": "先端の現代的な台座です"
+  },
+  "kqmhx15": {
+    "zh-cn": "高效与优雅",
+    "en": "Efficiency and elegance",
+    "ko": "효율성과 우아함",
+    "ja": "効率と優雅さです"
+  },
+  "mtdwao11": {
+    "zh-cn": " 集成自动路由、分包构建、可视化图表、动画与非侵入式埋点，助你专注业务。 ",
+    "en": "Integrate automatic routing, subpackage building, visual charts, animations and non-intrusive tagging to help you focus on your business.",
+    "ko": "자동화된 라우팅, 하청 빌드, 그래픽, 애니메이션, 비침투 매설 기능을 통해 업무에 집중할 수 있습니다.",
+    "ja": "自動ルーティング、下請け構築、可視化されたグラフ、アニメーション、非侵襲的な埋め込みポイントを統合することで、業務に集中することができます。"
+  },
+  "hf5sov6": {
+    "zh-cn": " 快速开始 ",
+    "en": "Start quickly",
+    "ko": "빠른 시작",
+    "ja": "早く始めます"
+  },
+  "hubg2": {
+    "zh-cn": "文档",
+    "en": "\"Document",
+    "ko": "문서",
+    "ja": "ドキュメント"
+  },
+  "jrasyv4": {
+    "zh-cn": "首屏包体",
+    "en": "The first screen package body",
+    "ko": "첫 화면 포체",
+    "ja": "ヘッドスクリーン包体です"
+  },
+  "p7ec2": {
+    "zh-cn": "轻量",
+    "en": "\"Lightweight\"",
+    "ko": "경량",
+    "ja": "軽量です"
+  },
+  "dgc46t4": {
+    "zh-cn": "构建分包",
+    "en": "Construction subcontracting",
+    "ko": "빌드 하청",
+    "ja": "構築下請です"
+  },
+  "d47kms4": {
+    "zh-cn": "按需加载",
+    "en": "Load on demand",
+    "ko": "필요에 따라 불러오기",
+    "ja": "オンデマンドでロードする"
+  },
+  "fjv22": {
+    "zh-cn": "埋点",
+    "en": "Burial point",
+    "ko": "매장시",
+    "ja": "埋め場所です"
+  },
+  "jfdhgh4": {
+    "zh-cn": "非侵入式",
+    "en": "Non-invasive",
+    "ko": "비침입적",
+    "ja": "非侵襲的です"
+  },
+  "kco1": {
+    "zh-cn": "月",
+    "en": "month",
+    "ko": "월",
+    "ja": "げつ"
+  },
+  "q5732": {
+    "zh-cn": "销量",
+    "en": "Sales volume",
+    "ko": "판매량",
+    "ja": "売上高です"
+  },
+  "lf0yl3": {
+    "zh-cn": "转化率",
+    "en": "Conversion rate",
+    "ko": "전환율",
+    "ja": "コンバージョン率"
+  },
+  "bjfktr4": {
+    "zh-cn": "图表展示",
+    "en": "Chart display",
+    "ko": "그래프로 나타내다",
+    "ja": "グラフ表示です"
+  },
+  "r3bvjaj": {
+    "zh-cn": "ECharts 折线 + 柱状双轴示例",
+    "en": "An example of ECharts zigzag + columnar dual-axis",
+    "ko": "이차츠 (echarts)의 접선 + 기둥 두 축",
+    "ja": "ECharts折れ線+棒状の2軸の例です"
+  },
+  "ax2e044": {
+    "zh-cn": "动画示例",
+    "en": "Animation example",
+    "ko": "애니메이션 예제",
+    "ja": "アニメーション例です"
+  },
+  "krphvye": {
+    "zh-cn": "GSAP 基础进场与交互动效",
+    "en": "GSAP basic entry and interaction effects",
+    "ko": "gsap 기반 입력 및 상호작용",
+    "ja": "GSAPの基本的なアプローチとインタラクティブ効果です"
+  },
+  "crire3": {
+    "zh-cn": "卡片一",
+    "en": "Card One",
+    "ko": "카드 1",
+    "ja": "カード1です"
+  },
+  "y2wmyf7": {
+    "zh-cn": "进入时向上淡入",
+    "en": "Fade upwards when entering",
+    "ko": "들어갈 때는 위로 페이드합니다",
+    "ja": "上に向かって進みます"
+  },
+  "criva3": {
+    "zh-cn": "卡片二",
+    "en": "Card Two",
+    "ko": "카드 2",
+    "ja": "カード二です"
+  },
+  "sju32z7": {
+    "zh-cn": "进入时缩放淡入",
+    "en": "Zoom in and out when entering",
+    "ko": "들어갈 때 페이드 들어오고 확대/축소",
+    "ja": "入域時にズームアウトします。"
+  },
+  "ubjps89": {
+    "zh-cn": " 交互：脉冲动画 ",
+    "en": "Interaction: Pulse animation",
+    "ko": "인터랙티브:펄스 애니메이션",
+    "ja": "インタラクティブ:パルスアニメーションです"
+  },
+  "7grhuz6": {
+    "zh-cn": "请输入用户名",
+    "en": "Please enter your username",
+    "ko": "사용자 이름을 입력하십시오",
+    "ja": "ユーザー名の入力をお願いします"
+  },
+  "venleq7": {
+    "zh-cn": "邮箱格式不正确",
+    "en": "The email address format is incorrect",
+    "ko": "메일박스 형식이 올바르지 않습니다",
+    "ja": "メールのフォーマットが正しくありません。"
+  },
+  "t60dtq8": {
+    "zh-cn": "提交成功(演示)",
+    "en": "Submission successful (demonstration)",
+    "ko": "성공적으로 전송되었습니다 (프리젠테이션)",
+    "ja": "プレゼン成功です(プレゼン)"
+  },
+  "z3qxvn8": {
+    "zh-cn": "提交失败(演示)",
+    "en": "Submission failed (Demonstration)",
+    "ko": "전송 실패 (프리젠테이션)",
+    "ja": "プレゼン失敗(プレゼン)です。"
+  },
+  "785btda": {
+    "zh-cn": "两次输入的密码不一致",
+    "en": "The passwords entered twice are inconsistent",
+    "ko": "두 번 입력한 비밀번호가 일치하지 않습니다",
+    "ja": "2回入力したパスワードが一致しません"
+  },
+  "2yc5x7": {
+    "zh-cn": "请同意服务条款",
+    "en": "Please agree to the terms of service",
+    "ko": "서비스 약관에 동의하십시오",
+    "ja": "約款に同意願います。"
+  },
+  "r21ualf": {
+    "zh-cn": "FormKit 表单提交成功！",
+    "en": "The FormKit form has been submitted successfully!",
+    "ko": "formkit 폼이 성공적으로 전송되었습니다!",
+    "ja": "FormKitフォームの提出成功です!"
+  },
+  "sdazode": {
+    "zh-cn": "FormKit 表单提交失败",
+    "en": "The FormKit form submission failed",
+    "ko": "formkit 폼 전송이 실패했습니다",
+    "ja": "FormKitフォームの提出に失敗しました"
+  },
+  "hk5qny4": {
+    "zh-cn": "表单示例",
+    "en": "Form example",
+    "ko": "폼 예제",
+    "ja": "マトリクス例です"
+  },
+  "g2xfjji": {
+    "zh-cn": "原生 + Tailwind 简易校验",
+    "en": "Native + Tailwind simple verification",
+    "ko": "원본 + tailwind 단순 검증",
+    "ja": "ネイティブ+ Tailwind簡易チェックです"
+  },
+  "hmxge3": {
+    "zh-cn": "用户名",
+    "en": "User name",
+    "ko": "사용자 이름",
+    "ja": "ユーザー名です"
+  },
+  "l6wdl3": {
+    "zh-cn": "请输入",
+    "en": "Please enter",
+    "ko": "입력하십시오",
+    "ja": "入力お願いします"
+  },
+  "padf2": {
+    "zh-cn": "邮箱",
+    "en": "Email",
+    "ko": "메일 박스",
+    "ja": "メールボックスです"
+  },
+  "fk4a44": {
+    "zh-cn": " 提交 ",
+    "en": "Submit",
+    "ko": "제출",
+    "ja": "提出します"
+  },
+  "miwv34": {
+    "zh-cn": " 重置 ",
+    "en": "Reset",
+    "ko": "초기화",
+    "ja": "リセットします"
+  },
+  "ivj2jjc": {
+    "zh-cn": "FormKit 表单演示",
+    "en": "FormKit form demonstration",
+    "ko": "formkit 폼 데모",
+    "ja": "FormKitフォームプレゼンです"
+  },
+  "drgrq0k": {
+    "zh-cn": "使用 FormKit 组件库的现代化表单",
+    "en": "Modernized forms using the FormKit component library",
+    "ko": "formkit 컴포넌트 라이브러리를 사용한 현대적인 폼",
+    "ja": "FormKitコンポーネントライブラリを使った現代的なフォームです"
+  },
+  "g9ob2": {
+    "zh-cn": "密码",
+    "en": "Password",
+    "ko": "암호",
+    "ja": "パスワードです"
+  },
+  "2j9vj05": {
+    "zh-cn": "请输入密码",
+    "en": "Please enter the password.",
+    "ko": "비밀번호를 입력하십시오.",
+    "ja": "パスワードをお願いします"
+  },
+  "frqaup4": {
+    "zh-cn": "确认密码",
+    "en": "Confirm password",
+    "ko": "비밀번호 확인",
+    "ja": "パスワードを確認します"
+  },
+  "pyymjc7": {
+    "zh-cn": "请再次输入密码",
+    "en": "Please enter the password again",
+    "ko": "비밀번호를 다시 입력하십시오",
+    "ja": "パスワードの再入力をお願いします"
+  },
+  "gt0k2": {
+    "zh-cn": "性别",
+    "en": "Gender",
+    "ko": "성별",
+    "ja": "性別です"
+  },
+  "2elmsl5": {
+    "zh-cn": "请选择性别",
+    "en": "Please select gender",
+    "ko": "성별을 선택하십시오",
+    "ja": "性別をお願いします"
+  },
+  "n5j1": {
+    "zh-cn": "男",
+    "en": "male",
+    "ko": "남자",
+    "ja": "男です"
+  },
+  "ho31": {
+    "zh-cn": "女",
+    "en": "female",
+    "ko": "여자",
+    "ja": "女です"
+  },
+  "eae82": {
+    "zh-cn": "其他",
+    "en": "Others",
+    "ko": "기타",
+    "ja": "その他です"
+  },
+  "av59wb4": {
+    "zh-cn": "兴趣爱好",
+    "en": "Hobbies and interests",
+    "ko": "취미 생활",
+    "ja": "趣味です"
+  },
+  "mab92": {
+    "zh-cn": "编程",
+    "en": "Programming",
+    "ko": "프로그래밍",
+    "ja": "プログラミングです"
+  },
+  "qaae2": {
+    "zh-cn": "阅读",
+    "en": "Read",
+    "ko": "읽기",
+    "ja": "読みます"
+  },
+  "owyg2": {
+    "zh-cn": "运动",
+    "en": "Sports",
+    "ko": "운동",
+    "ja": "運動です"
+  },
+  "q9x92": {
+    "zh-cn": "音乐",
+    "en": "Music",
+    "ko": "음악",
+    "ja": "音楽です"
+  },
+  "io9is94": {
+    "zh-cn": "通知偏好",
+    "en": "Notification preference",
+    "ko": "선호도 알림",
+    "ja": "プリファレンスをお知らせします"
+  },
+  "bzmrdv4": {
+    "zh-cn": "实时通知",
+    "en": "Real-time notification",
+    "ko": "실시간 알림",
+    "ja": "リアルタイムでお知らせします"
+  },
+  "e0yvd64": {
+    "zh-cn": "每日汇总",
+    "en": "Daily summary",
+    "ko": "매일 집계하다",
+    "ja": "毎日まとめます"
+  },
+  "awhlk54": {
+    "zh-cn": "关闭通知",
+    "en": "Close notice",
+    "ko": "알림 닫기",
+    "ja": "閉鎖通知です"
+  },
+  "a71frv4": {
+    "zh-cn": "个人简介",
+    "en": "Personal Profile",
+    "ko": "개인 소개",
+    "ja": "プロフィールです"
+  },
+  "erqb8uc": {
+    "zh-cn": "请简单介绍一下自己...",
+    "en": "Please briefly introduce yourself...",
+    "ko": "자기소개를 간단히 해 주세요...",
+    "ja": "簡単な自己紹介をお願いします。"
+  },
+  "1n7zlfb": {
+    "zh-cn": "我已阅读并同意服务条款",
+    "en": "I have read and agreed to the terms of service",
+    "ko": "저는 서비스 약관을 읽고 동의합니다",
+    "ja": "約款を読んで同意しました"
+  },
+  "aeakxk6": {
+    "zh-cn": " 提交注册 ",
+    "en": "Submit registration",
+    "ko": "등록을 제출하다",
+    "ja": "登録を提出します"
+  },
+  "xmbm4y6": {
+    "zh-cn": " 重置表单 ",
+    "en": "Reset the form",
+    "ko": "폼 초기화",
+    "ja": "フォームをリセットします。"
+  },
+  "11vm3p5": {
+    "zh-cn": "API请求",
+    "en": "API request",
+    "ko": "api 요청",
+    "ja": "API要求です"
+  },
+  "ba6onz9": {
+    "zh-cn": "API请求失败: ",
+    "en": "API request failed",
+    "ko": "api 요청 실패:",
+    "ja": "APIの要求に失敗します:"
+  },
+  "vw20vz9": {
+    "zh-cn": "API返回业务错误",
+    "en": "The API returns a business error",
+    "ko": "api 가 서비스 오류를 반환합니다",
+    "ja": "APIはサービスエラーを返します"
+  },
+  "e4dk2": {
+    "zh-cn": "优秀",
+    "en": "\"Excellent\"",
+    "ko": "우수 한",
+    "ja": "優秀です"
+  },
+  "modq2": {
+    "zh-cn": "良好",
+    "en": "Good",
+    "ko": "좋은",
+    "ja": "良好です"
+  },
+  "eto22": {
+    "zh-cn": "及格",
+    "en": "Pass",
+    "ko": "합격",
+    "ja": "合格です"
+  },
+  "eh3uk3": {
+    "zh-cn": "待提升",
+    "en": "To be improved",
+    "ko": "승진을 기다리다",
+    "ja": "昇進待ちです"
+  },
+  "hn7yhx4": {
+    "zh-cn": "表格示例",
+    "en": "Table example",
+    "ko": "표 예제",
+    "ja": "表の例です"
+  },
+  "kk3jxvj": {
+    "zh-cn": "原生表格 · 排序 / 筛选 / 分页",
+    "en": "Native table · Sort/Filter/Pagination",
+    "ko": "네이티브 테이블 · 정렬/필터링/호출하기",
+    "ja": "ネイティブスプレッド・並べ替え/スクリーニング/ページ分け"
+  },
+  "d5aw7d4": {
+    "zh-cn": "搜索名称",
+    "en": "Search name",
+    "ko": "검색 이름",
+    "ja": "名前を検索します"
+  },
+  "dbq4yq4": {
+    "zh-cn": "最低分：",
+    "en": "Lowest score",
+    "ko": "최저점수:",
+    "ja": "最低点です:"
+  },
+  "ewpv73": {
+    "zh-cn": "按分数",
+    "en": "By score",
+    "ko": "점수에 따라",
+    "ja": "点数をつけます。"
+  },
+  "exy773": {
+    "zh-cn": "按姓名",
+    "en": "By name",
+    "ko": "성명에 의하여",
+    "ja": "姓名どおりです"
+  },
+  "eomg2": {
+    "zh-cn": "升序",
+    "en": "Ascending order",
+    "ko": "오름 차순",
+    "ja": "昇順です"
+  },
+  "q31e2": {
+    "zh-cn": "降序",
+    "en": "Descending order",
+    "ko": "내림 차순",
+    "ja": "降順です"
+  },
+  "i1hi3s6": {
+    "zh-cn": " 紧凑模式 ",
+    "en": "Compact mode",
+    "ko": "컴팩트모드",
+    "ja": "コンパクトモードです"
+  },
+  "duq72": {
+    "zh-cn": "共 ",
+    "en": "A total of",
+    "ko": "모두",
+    "ja": "共です"
+  },
+  "l6p2": {
+    "zh-cn": " 条",
+    "en": "article",
+    "ko": "조",
+    "ja": "条です"
+  },
+  "e4dd24": {
+    "zh-cn": " 姓名 ",
+    "en": "Name",
+    "ko": "이름",
+    "ja": "名前です"
+  },
+  "d27124": {
+    "zh-cn": " 分数 ",
+    "en": "Score",
+    "ko": "점수",
+    "ja": "点数です"
+  },
+  "gdz0p4": {
+    "zh-cn": " 标签 ",
+    "en": "Tag",
+    "ko": "태그",
+    "ja": "ラベルです"
+  },
+  "dcv57g4": {
+    "zh-cn": "暂无数据",
+    "en": "No data available for the time being.",
+    "ko": "불충분한 증거",
+    "ja": "仮無数の根拠です"
+  },
+  "j69y2": {
+    "zh-cn": "每页",
+    "en": "Each page",
+    "ko": "페이지",
+    "ja": "各ページごとにです"
+  },
+  "kf51": {
+    "zh-cn": "条",
+    "en": "article",
+    "ko": "조",
+    "ja": "条です"
+  },
+  "btlof3": {
+    "zh-cn": "上一页",
+    "en": "Previous page",
+    "ko": "이전 페이지",
+    "ja": "前のページです"
+  },
+  "btmf43": {
+    "zh-cn": "下一页",
+    "en": "Next page",
+    "ko": "다음 페이지",
+    "ja": "次ページです"
+  },
+  "qcisa95": {
+    "zh-cn": "关于本模板",
+    "en": "About this template",
+    "ko": "이 템플릿 정보",
+    "ja": "本テンプレートについてです"
+  },
+  "4hd6mt3j": {
+    "zh-cn": " 集成：Vue3 + Vite + TypeScript + TailwindCSS + Pinia + vite-plugin-pages + vite-plugin-layouts + ECharts + GSAP + rrweb + alova。 ",
+    "en": "Integration Vue3 + Vite + TypeScript + TailwindCSS + Pinia + vite-plugin-pages + vite-plugin-layouts + ECharts + GSAP + rrweb + alova.",
+    "ko": "통합:vue3 + vite + typescript + tailwindcss + pinia + wite-plugin-pages + wite-plugin-layouts + echarts + gsap + rrweb +alova.",
+    "ja": "集積ですVue3 + Vite + TypeScript + TailwindCSS + Pinia + vite-plugin-pages + vite-plugin-layouts + ECharts + GSAP + rrweb +alovaです。"
+  },
+  "uclpdi8": {
+    "zh-cn": " 自动路由指向 ",
+    "en": "Automatic route pointing",
+    "ko": "자동으로 라우팅됩니다",
+    "ja": "自動ルーティングポインタです"
+  },
+  "oisdva8": {
+    "zh-cn": " 默认布局位于 ",
+    "en": "The default layout is located",
+    "ko": "기본 레이아웃은 위치",
+    "ja": "デフォルトの配置です"
+  },
+  "i33xazm": {
+    "zh-cn": " 按功能库进行 Rollup 分包，产物以 ",
+    "en": "Rollup is subcontracted by function library, and the product is",
+    "ko": "기능 라이브러리별로 rollup 하급을 통해 생성된다",
+    "ja": "機能別にRollupを下請します。"
+  },
+  "lzfvd4": {
+    "zh-cn": " 输出 ",
+    "en": "Output",
+    "ko": "출력",
+    "ja": "出力します"
+  },
+  "u3llh1b": {
+    "zh-cn": " Alova 可通过 ",
+    "en": "Alova is accessible",
+    "ko": "알로바는 통과 가능하다",
+    "ja": "Alova通過できます"
+  },
+  "ptnagse": {
+    "zh-cn": " 切换 axios/xhr ",
+    "en": "Switch axios/xhr",
+    "ko": "axios/xhr 전환",
+    "ja": "axios/xhrを切り替えます"
+  },
+  "gbpbdk4": {
+    "zh-cn": "组件演示",
+    "en": "Component demonstration",
+    "ko": "구성 요소 프리젠테이션",
+    "ja": "コンポーネントの実演です"
+  },
+  "ezf4lck": {
+    "zh-cn": "基于 Tailwind 封装的常用 UI",
+    "en": "Common UIs encapsulated based on Tailwind",
+    "ko": "tailwind 캡슐화를 기반으로 자주 사용되는 ui",
+    "ja": "Tailwindパッケージをベースにした一般的なUIです"
+  },
+  "glwp2": {
+    "zh-cn": "张三",
+    "en": "Zhang SAN",
+    "ko": "장삼",
+    "ja": "張三さんです"
+  },
+  "e7b84r6": {
+    "zh-cn": " 打开弹窗 ",
+    "en": "Open the pop-up window",
+    "ko": "팝업창을 열다",
+    "ja": "弾倉を開けます"
+  },
+  "fmk9n34": {
+    "zh-cn": "示例弹窗",
+    "en": "Sample pop-up",
+    "ko": "예제 팝업",
+    "ja": "窓をはじきます"
+  },
+  "dd4ni4": {
+    "zh-cn": " 取消 ",
+    "en": "Cancel",
+    "ko": "취소",
+    "ja": "取り消します"
+  },
+  "iv7ii4": {
+    "zh-cn": " 确认 ",
+    "en": "Confirm",
+    "ko": "확인",
+    "ja": "確認します"
+  },
+  "no6ng9q": {
+    "zh-cn": " 这是一个基于 Tailwind 的弹窗组件示例。 ",
+    "en": "This is an example of a pop-up component based on Tailwind.",
+    "ko": "이것은 tailwind 기반의 팝윈도 컴포넌트의 예제이다.",
+    "ja": "これはTailwindをベースにしたウィンドウの例です。"
+  }
+}
