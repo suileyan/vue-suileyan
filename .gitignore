@@ -35,3 +35,10 @@ _auto_i18n_repo/
 *.zip
 *.tar.gz
 CLAUDE.md
+
+# Qwen AI assistant folder
+.qwen
+
+# Qwen related files
+AGENTS.md
+QWEN.md

@@ -16,7 +16,8 @@
           >
         </h2>
         <p class="mt-4 text-slate-600 dark:text-slate-300">
-          集成自动路由、分包构建、可视化图表、动画与非侵入式埋点，助你专注业务。
+          集成自动路由、分包构建、可视化图表、动画与非侵入式埋点，基于 Vue 3、Vite、Tailwind
+          CSS、Pinia 和 Alova，助你专注业务。
         </p>
         <div class="mt-8 flex gap-4">
           <RouterLink

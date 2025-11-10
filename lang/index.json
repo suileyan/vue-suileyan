@@ -730,5 +730,11 @@
     "en": "This is an example of a pop-up component based on Tailwind.",
     "ko": "이것은 tailwind 기반의 팝윈도 컴포넌트의 예제이다.",
     "ja": "これはTailwindをベースにしたウィンドウの例です。"
+  },
+  "q5k7yb26": {
+    "zh-cn": " 集成自动路由、分包构建、可视化图表、动画与非侵入式埋点，基于 Vue 3、Vite、Tailwind CSS、Pinia 和 Alova，助你专注业务。 ",
+    "en": "Integrate automatic routing, subpackage build, visual charts, animations and non-intrusive embedding, based on Vue 3, Vite, Tailwind CSS, Pinia and Alova to help you focus on your business.",
+    "ko": "vue 3, vite, tailwind css, pinia 및 alova 기반의 자동화된 라우팅, 하도급 빌드, 시각화 차트, 애니메이션, 비침투성 매설 기능으로 업무에 집중할 수 있도록 지원합니다.",
+    "ja": "Vue 3、Vite、Tailwind CSS、Pinia、Alovaをベースに、自動ルーティング、ビルド、ビジュアルチャート、アニメーション、非侵侵性の埋め込みポイントを統合しています。"
   }
 }
