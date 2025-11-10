@@ -1108,6 +1108,98 @@
     "@eslint/core" "^0.15.2"
     levn "^0.4.1"
 
+"@formkit/core@1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/core/-/core-1.6.9.tgz#36f0ee738483c109a3749de3fe17f46791fad93f"
+  integrity sha512-Zb5OkYKMf7Rp1pd4iUMv0TJQvfgl1PdKtRRQoGiTA0XIFLB/7tcRMr1wc5isA2JS+hllfxMTh3RWF8N+64fTMg==
+  dependencies:
+    "@formkit/utils" "1.6.9"
+
+"@formkit/dev@1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/dev/-/dev-1.6.9.tgz#f8124d49577cca0024f153130e50307929bcace3"
+  integrity sha512-4ueBpZAOiKr8/LZnq3mNePCX4ZB1j1JuJscBEwugWMnDeDwCNo5XWBrng1ER/LlitTRQ3mtEBNy2Qpm0yAHlwA==
+  dependencies:
+    "@formkit/core" "1.6.9"
+    "@formkit/utils" "1.6.9"
+
+"@formkit/i18n@1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/i18n/-/i18n-1.6.9.tgz#ce9e6e5f132f1ba0007ec100b686bfff76b34d98"
+  integrity sha512-8NA5bALlspCBEwInuZVgBqgQr0lDfproZdmbs2LciQpGi2B15u74JCjAkEwaKlMs+qgf/ds3QcIgUv2ztyyVEA==
+  dependencies:
+    "@formkit/core" "1.6.9"
+    "@formkit/utils" "1.6.9"
+    "@formkit/validation" "1.6.9"
+
+"@formkit/icons@^1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/icons/-/icons-1.6.9.tgz#5265e0130a3a13f548caca2fe9f79de59c122176"
+  integrity sha512-Fg54j0ArCGNdE1EbwarEhOBj04WlFdF9wafRiwOueqDM9/aUy4j8T2W/4eu8Wk8sNZ1nmrcQ5qUNFIb6MT27aQ==
+  dependencies:
+    "@formkit/core" "1.6.9"
+
+"@formkit/inputs@1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/inputs/-/inputs-1.6.9.tgz#1b00fb3e81f508c3e8366be4ad558067b4061f67"
+  integrity sha512-k9gjV1e5F87NxSnu13JtKb30XYt6ndx2KGHZG8Xz0etoP75yJlMaeROHHPvlxdy2gZM6qH7Ex4it51W74Wh2Eg==
+  dependencies:
+    "@formkit/core" "1.6.9"
+    "@formkit/utils" "1.6.9"
+
+"@formkit/observer@1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/observer/-/observer-1.6.9.tgz#fce517d76bea3aa6c34ac840bcb706b84f0c2632"
+  integrity sha512-p3MCmzp6jwzXIuV3gI9uTJTJl+sN5689C7qf7gdrS8jb1fbX1snKiTyWA8FXOrBXu+ne5z/sA/yBWqYFTSLy8A==
+  dependencies:
+    "@formkit/core" "1.6.9"
+    "@formkit/utils" "1.6.9"
+
+"@formkit/rules@1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/rules/-/rules-1.6.9.tgz#948d4895543c2b46e83f37386c3b3e7fa64723b6"
+  integrity sha512-5Vu3JACKyws1kw02qF+024WkS7L9kYZ0lmdSpsaTqg5Wf7+InsxWXFYaG6vCzqIh4Lk9NeffIzq/xyGpGxf5uQ==
+  dependencies:
+    "@formkit/core" "1.6.9"
+    "@formkit/utils" "1.6.9"
+    "@formkit/validation" "1.6.9"
+
+"@formkit/themes@1.6.9", "@formkit/themes@^1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/themes/-/themes-1.6.9.tgz#71e1febe260e657c4a9aa94c179a22272d191c45"
+  integrity sha512-/UD+MehQEdcCEadt73eIBGGAMEK8ODN0yq9r9299WvQxIELCOP2MbcxuWCV/g2Vd15Xhl8YFdn4KCzQi4X7QXA==
+  dependencies:
+    "@formkit/core" "1.6.9"
+
+"@formkit/utils@1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/utils/-/utils-1.6.9.tgz#df320972b30d5cea8f416c24b446a598737d5819"
+  integrity sha512-vSFhB/Sm/A+SdwKdBi4WhJcdbePqSYRaB878Ol9HL8roTmmmgQpThvkv6EjLM6aRRP27Il5rS8XtIAIeh8vdTA==
+
+"@formkit/validation@1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/validation/-/validation-1.6.9.tgz#d355ece3c007e97553ab6b4d23ed87bf55e2b53e"
+  integrity sha512-9PGwN0ZDJt3hsrMyaL8KTG3diSQDik1OGogVG6/nFcZhWUycpeamFfXZSQ5pfzmwnvrTHsvyT0FtKitUnWWuPA==
+  dependencies:
+    "@formkit/core" "1.6.9"
+    "@formkit/observer" "1.6.9"
+    "@formkit/utils" "1.6.9"
+
+"@formkit/vue@^1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@formkit/vue/-/vue-1.6.9.tgz#2393c49757e3c13790432c7e1e93458710ca9a10"
+  integrity sha512-WrjAtEsKnFJzxQuATWsWKMpTAyJE15PUmRh9hwEAqgTDy2yMog1gxqxfZv3rEAdIdgXNp08tWmRVnQgDIF3vAQ==
+  dependencies:
+    "@formkit/core" "1.6.9"
+    "@formkit/dev" "1.6.9"
+    "@formkit/i18n" "1.6.9"
+    "@formkit/inputs" "1.6.9"
+    "@formkit/observer" "1.6.9"
+    "@formkit/rules" "1.6.9"
+    "@formkit/themes" "1.6.9"
+    "@formkit/utils" "1.6.9"
+    "@formkit/validation" "1.6.9"
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@humanfs/core/-/core-0.19.1.tgz#17c55ca7d426733fe3c561906b8173c336b40a77"

@@ -16,10 +16,15 @@ const router = createRouter({
 
 NProgress.configure({ showSpinner: false })
 
+// 定义路由元信息类型
+interface RouteMeta {
+  title?: string
+}
+
 router.beforeEach((to, _from, next) => {
   NProgress.start()
   const baseName = 'SuiKit Base'
-  const pageTitle = (to.meta as any)?.title || to.name || ''
+  const pageTitle = (to.meta as RouteMeta)?.title || (to.name ? String(to.name) : '')
   document.title = pageTitle ? `${pageTitle} - ${baseName}` : baseName
   next()
 })

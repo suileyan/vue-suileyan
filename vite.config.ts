@@ -1,6 +1,12 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import AutoI18n, { GoogleTranslator } from 'vite-auto-i18n-plugin'
+import AutoI18n, {
+  GoogleTranslator,
+  YoudaoTranslator,
+  BaiduTranslator,
+  VolcengineTranslator,
+  EmptyTranslator,
+} from 'vite-auto-i18n-plugin'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -14,33 +20,72 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { fileURLToPath, URL } from 'node:url'
 import ops from 'vite-plugin-ops'
 
-const i18nPlugin = AutoI18n({
-  globalPath: './lang',
-  namespace: 'lang',
-  distPath: './dist/js',
-  distKey: 'index',
-  targetLangList: ['en', 'ko', 'ja'],
-  excludedCall: ['noTrans', 'raw'],
-  excludedPath: ['node_modules'],
-  excludedPattern: [/^(中文|English|한국어|日本語)$/],
-  isClear: true,
-  rewriteConfig: true,
-  originLang: 'zh-cn',
-  translator: new GoogleTranslator({
-    proxyOption: {
-      host: process.env.VITE_AUTO_I18N_PROXY_HOST || '127.0.0.1',
-      port: Number(process.env.VITE_AUTO_I18N_PROXY_PORT || 7897),
-      headers: {
-        'User-Agent': 'Node',
-      },
-    },
-  }),
-})
+const createTranslator = (env: Record<string, string>) => {
+  const translatorType = env.VITE_AUTO_I18N_TRANSLATOR || 'google'
+
+  switch (translatorType) {
+    case 'youdao':
+      return new YoudaoTranslator({
+        appId: env.YOUDAO_APPID || '',
+        appKey: env.YOUDAO_KEY || '',
+      })
+
+    case 'baidu':
+      return new BaiduTranslator({
+        appId: env.BAIDU_APPID || '',
+        appKey: env.BAIDU_KEY || '',
+      })
+
+    case 'volcengine':
+      return new VolcengineTranslator({
+        apiKey: env.VOLCENGINE_API_KEY || '',
+        model: env.VOLCENGINE_MODEL || 'doubao-1-5-pro-32k-250115',
+      })
+
+    case 'empty':
+      return new EmptyTranslator()
+
+    case 'google':
+    default:
+      return new GoogleTranslator({
+        proxyOption: {
+          host: env.VITE_AUTO_I18N_PROXY_HOST || '127.0.0.1',
+          port: Number(env.VITE_AUTO_I18N_PROXY_PORT || 7897),
+          headers: {
+            'User-Agent': 'Node',
+          },
+        },
+      })
+  }
+}
+
+const createI18nPlugin = (env: Record<string, string>) => {
+  const enabled = env.VITE_AUTO_I18N !== 'false'
+  const targetLangs = env.VITE_AUTO_I18N_TARGETS?.split(',') || ['en', 'ko', 'ja']
+
+  return AutoI18n({
+    enabled,
+    globalPath: './lang',
+    namespace: 'lang',
+    distPath: './dist/js',
+    distKey: 'index',
+    targetLangList: targetLangs,
+    excludedCall: ['noTrans', 'raw'],
+    excludedPath: ['node_modules'],
+    excludedPattern: [/^(中文|English|한국어|日本語)$/],
+    isClear: true,
+    rewriteConfig: true,
+    originLang: 'zh-cn',
+    translator: createTranslator(env),
+  })
+}
 
 // https://vite.dev/config/
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+
   return {
-    base: process.env.VITE_BASE ?? '/vue-suileyan/',
+    base: env.VITE_BASE ?? '/vue-suileyan/',
     plugins: [
       vue({
         template: {
@@ -105,7 +150,7 @@ export default defineConfig(() => {
           navigateFallback: '/offline.html',
         },
       }),
-      i18nPlugin,
+      createI18nPlugin(env),
       ops({ strategy: 'conservative' }),
     ],
     resolve: {

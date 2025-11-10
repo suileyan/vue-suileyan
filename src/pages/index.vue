@@ -70,55 +70,31 @@
 <script setup lang="ts">
   import { ref, onMounted } from 'vue'
   import LineChart from '@/components/charts/LineChart.vue'
-  import { gsap } from 'gsap'
-  import dayjs from 'dayjs'
+  import { generateSampleData, createLineChartConfig } from '@/utils/chartUtils'
+  import { createPageLoadAnimation } from '@/utils/animationUtils'
 
   const titleEl = ref<HTMLElement | null>(null)
   const orbEl = ref<HTMLElement | null>(null)
   const cardEl = ref<HTMLElement | null>(null)
 
-  const base = Array.from({ length: 10 }).map((_, i) => ({
-    date: dayjs()
-      .subtract(9 - i, 'day')
-      .format('MM-DD'),
-    value: Math.round(50 + Math.random() * 50),
-  }))
+  // 生成模拟数据
+  const sampleData = generateSampleData(10, 50, 50)
+
+  // 创建图表配置
+  const { labels, datasets, options } = createLineChartConfig(
+    sampleData.map((d) => d.date),
+    sampleData.map((d) => d.value),
+  )
 
   const lineData = {
-    labels: base.map((b) => b.date),
-    datasets: [
-      {
-        label: 'Trend',
-        data: base.map((b) => b.value),
-        fill: true,
-        borderColor: '#6366F1',
-        backgroundColor: (ctx: any) => {
-          const { ctx: c, chartArea } = ctx.chart
-          if (!chartArea) return 'rgba(99,102,241,.2)'
-          const gradient = c.createLinearGradient(0, chartArea.top, 0, chartArea.bottom)
-          gradient.addColorStop(0, 'rgba(99,102,241,.35)')
-          gradient.addColorStop(1, 'rgba(99,102,241,0)')
-          return gradient
-        },
-        tension: 0.35,
-        pointRadius: 0,
-        borderWidth: 3,
-      },
-    ],
+    labels,
+    datasets,
   }
 
-  const lineOptions = {
-    maintainAspectRatio: false,
-    responsive: true,
-    plugins: { legend: { display: false }, tooltip: { enabled: true } },
-    scales: { x: { grid: { display: false } }, y: { grid: { color: 'rgba(148,163,184,.2)' } } },
-  }
+  const lineOptions = options
 
   onMounted(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-    tl.from(titleEl.value, { y: 20, opacity: 0, duration: 0.6 })
-      .from([cardEl.value], { y: 30, opacity: 0, duration: 0.6 }, '-=0.2')
-      .from([orbEl.value], { opacity: 0, scale: 0.8, duration: 0.8 }, '-=0.6')
+    createPageLoadAnimation(titleEl.value, cardEl.value, orbEl.value)
   })
 </script>
 
