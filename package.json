@@ -14,6 +14,11 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -42,11 +47,15 @@
     "vue": "^3.5.21",
     "vue-chartjs": "^5.3.2",
     "vue-echarts": "^8.0.0",
+    "vue-i18n": "^11.1.12",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@eslint/js": "^9.36.0",
     "@iconify-json/heroicons": "^1.2.3",
+    "@playwright/test": "^1.56.1",
     "@tailwindcss/postcss": "^4.1.13",
     "@types/mockjs": "^1.0.10",
     "@types/node": "^24.5.2",
@@ -55,6 +64,8 @@
     "@typescript-eslint/parser": "^8.44.1",
     "@vitalets/google-translate-api": "^9.2.1",
     "@vitejs/plugin-vue": "^6.0.1",
+    "@vitest/coverage-v8": "^4.0.8",
+    "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
     "autoprefixer": "^10.4.21",
     "cross-env": "^10.0.0",
@@ -62,6 +73,7 @@
     "eslint": "^9.36.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-vue": "^10.5.0",
+    "happy-dom": "^20.0.10",
     "husky": "^9.1.7",
     "json-format": "^1.0.1",
     "lint-staged": "^16.2.3",
@@ -85,6 +97,7 @@
     "vite-plugin-pages": "^0.33.1",
     "vite-plugin-pwa": "^1.0.3",
     "vite-plugin-vue-layouts": "^0.11.0",
+    "vitest": "^4.0.8",
     "vue-eslint-parser": "^10.2.0",
     "vue-tsc": "^3.0.7"
   }

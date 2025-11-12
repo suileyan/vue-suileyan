@@ -1,0 +1,5 @@
+{
+  "greeting": "Hello, {name}!",
+  "items": "{count} item | {count} items",
+  "date": "{ts, date, ::yyyy-MM-dd}"
+}

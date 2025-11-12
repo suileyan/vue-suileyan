@@ -46,6 +46,13 @@
           <option value="ko" :selected="app.lang === 'ko'">{{ raw('한국어') }}</option>
           <option value="ja" :selected="app.lang === 'ja'">{{ raw('日本語') }}</option>
         </select>
+        <select
+          class="rounded border border-base-300 bg-base-100 text-base-content px-2 py-1 focus:outline-none focus:border-primary hover:bg-base-200"
+          @change="onI18nLocaleChange($event)"
+        >
+          <option value="zh-CN">Vue I18n: 中文</option>
+          <option value="en">Vue I18n: English</option>
+        </select>
       </div>
     </header>
 
@@ -62,11 +69,17 @@
 <script setup lang="ts">
   import { useAppStore } from '@/stores/app'
   import { raw } from '@/utils/noTrans'
+  import { setI18nLocale } from '@/plugins/i18n'
   const year = new Date().getFullYear()
   const app = useAppStore()
 
   function onLangChange(e: Event) {
     const value = (e.target as HTMLSelectElement).value as string
     app.setLang(value)
+  }
+
+  function onI18nLocaleChange(e: Event) {
+    const value = (e.target as HTMLSelectElement).value as 'zh-CN' | 'en'
+    setI18nLocale(value)
   }
 </script>

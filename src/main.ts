@@ -8,6 +8,7 @@ import { initRRWeb } from './plugins/rrweb'
 import { registerSW } from 'virtual:pwa-register'
 import { handleError } from './utils/errorHandler'
 import formKitPlugin from './plugins/formkit'
+import { i18n } from './plugins/i18n'
 
 if (import.meta.env.DEV && import.meta.env['VITE_MSW'] !== 'false') {
   // 不阻塞应用挂载；尽力启动
@@ -31,6 +32,7 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(formKitPlugin)
+app.use(i18n)
 
 // 在开发或启用时初始化非侵入式埋点（rrweb）
 initRRWeb()

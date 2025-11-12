@@ -7,7 +7,7 @@ import prettier from 'eslint-plugin-prettier'
 import vueParser from 'vue-eslint-parser'
 
 export default [
-  { ignores: ['dist/**', 'node_modules/**', 'lang/**', '**/*.d.ts'] },
+  { ignores: ['dist/**', 'node_modules/**', 'lang/**', '**/*.d.ts', 'vitest.config.ts'] },
   js.configs.recommended,
   ...vue.configs['flat/recommended'],
   {
@@ -23,7 +23,7 @@ export default [
     },
   },
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
@@ -49,6 +49,23 @@ export default [
       '@typescript-eslint/await-thenable': 'error',
       '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
       '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
+    },
+  },
+  {
+    files: ['vite.config.ts', 'playwright.config.ts', 'tests/**/*.ts'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+    },
+    plugins: { '@typescript-eslint': ts, prettier },
+    rules: {
+      'prettier/prettier': 'warn',
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' },
+      ],
+      'no-undef': 'off',
+      'no-unused-vars': 'off',
     },
   },
   {

@@ -736,5 +736,11 @@
     "en": "Integrate automatic routing, subpackage build, visual charts, animations and non-intrusive embedding, based on Vue 3, Vite, Tailwind CSS, Pinia and Alova to help you focus on your business.",
     "ko": "vue 3, vite, tailwind css, pinia 및 alova 기반의 자동화된 라우팅, 하도급 빌드, 시각화 차트, 애니메이션, 비침투성 매설 기능으로 업무에 집중할 수 있도록 지원합니다.",
     "ja": "Vue 3、Vite、Tailwind CSS、Pinia、Alovaをベースに、自動ルーティング、ビルド、ビジュアルチャート、アニメーション、非侵侵性の埋め込みポイントを統合しています。"
+  },
+  "lzg3hkc": {
+    "zh-cn": "Vue I18n: 中文",
+    "en": "",
+    "ko": "",
+    "ja": ""
   }
 }

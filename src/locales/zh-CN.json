@@ -1,0 +1,5 @@
+{
+  "greeting": "你好，{name}!",
+  "items": "{count} 个项目",
+  "date": "{ts, date, ::yyyy-MM-dd}"
+}

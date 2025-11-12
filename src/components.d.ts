@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BarChart: typeof import('./components/charts/BarChart.vue')['default']
+    ErrorBoundary: typeof import('./components/ErrorBoundary.vue')['default']
     IHeroiconsEnvelope20Solid: typeof import('~icons/heroicons/envelope20-solid')['default']
     IHeroiconsSparkles20Solid: typeof import('~icons/heroicons/sparkles20-solid')['default']
     IHeroiconsUser20Solid: typeof import('~icons/heroicons/user20-solid')['default']
