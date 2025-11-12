@@ -22,11 +22,18 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
       - name: Unit Tests
         run: yarn test
 
       - name: E2E Tests
-        run: yarn e2e
+        run: |
+          yarn build
+          npx serve dist -p 4173 &
+          sleep 10
+          yarn e2e
 
       - name: Lint
         run: yarn lint
