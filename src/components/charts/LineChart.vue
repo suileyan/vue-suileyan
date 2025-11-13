@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-  import { Line } from 'vue-chartjs'
+  import { Line } from 'vue-chartjs';
   import {
     Chart as ChartJS,
     CategoryScale,
@@ -16,7 +16,7 @@
     Tooltip,
     Filler,
     Legend,
-  } from 'chart.js'
+  } from 'chart.js';
 
   ChartJS.register(
     CategoryScale,
@@ -27,12 +27,12 @@
     Tooltip,
     Filler,
     Legend,
-  )
+  );
 
   defineProps<{
-    data: any
-    options?: any
-    height?: number
-    width?: number
-  }>()
+    data: any;
+    options?: any;
+    height?: number;
+    width?: number;
+  }>();
 </script>

@@ -3,14 +3,14 @@
  * 集中管理动画配置和工具函数，减少重复代码
  */
 
-import { gsap } from 'gsap'
+import { gsap } from 'gsap';
 
 // 默认动画配置
 export const DEFAULT_ANIMATION_CONFIG = {
   ease: 'power3.out',
   duration: 0.6,
   opacity: 0,
-} as const
+} as const;
 
 /**
  * 创建渐入动画时间线
@@ -18,12 +18,12 @@ export const DEFAULT_ANIMATION_CONFIG = {
 export function createFadeInTimeline(
   elements: (gsap.TweenTarget | null)[],
   config: {
-    y?: number
-    x?: number
-    scale?: number
-    stagger?: number
-    ease?: string
-    duration?: number
+    y?: number;
+    x?: number;
+    scale?: number;
+    stagger?: number;
+    ease?: string;
+    duration?: number;
   } = {},
 ): gsap.core.Timeline {
   const timeline = gsap.timeline({
@@ -32,10 +32,10 @@ export function createFadeInTimeline(
       duration: config.duration || DEFAULT_ANIMATION_CONFIG.duration,
       opacity: 0,
     },
-  })
+  });
 
   // 过滤掉null元素
-  const validElements = elements.filter((el) => el !== null) as gsap.TweenTarget[]
+  const validElements = elements.filter((el) => el !== null) as gsap.TweenTarget[];
 
   // 如果有多个元素且需要错开动画
   if (validElements.length > 1 && config.stagger) {
@@ -44,12 +44,12 @@ export function createFadeInTimeline(
       x: config.x || 0,
       scale: config.scale || 1,
       stagger: config.stagger,
-    })
+    });
   } else {
     // 单个元素或同时动画
     validElements.forEach((el, index) => {
       const delay =
-        index > 0 ? `-=${config.duration || DEFAULT_ANIMATION_CONFIG.duration * 0.3}` : 0
+        index > 0 ? `-=${config.duration || DEFAULT_ANIMATION_CONFIG.duration * 0.3}` : 0;
 
       timeline.from(
         el,
@@ -59,11 +59,11 @@ export function createFadeInTimeline(
           scale: config.scale || 1,
         },
         delay,
-      )
-    })
+      );
+    });
   }
 
-  return timeline
+  return timeline;
 }
 
 /**
@@ -74,12 +74,12 @@ export function createPageLoadAnimation(
   cardElement: gsap.TweenTarget | null,
   orbElement: gsap.TweenTarget | null,
 ): void {
-  if (!titleElement || !cardElement || !orbElement) return
+  if (!titleElement || !cardElement || !orbElement) return;
 
   const timeline = createFadeInTimeline([titleElement, cardElement], {
     y: 20,
     stagger: 0.2,
-  })
+  });
 
   timeline.from(
     orbElement,
@@ -89,7 +89,7 @@ export function createPageLoadAnimation(
       duration: 0.8,
     },
     '-=0.6',
-  )
+  );
 }
 
 /**
@@ -98,19 +98,19 @@ export function createPageLoadAnimation(
 export function createHoverAnimation(
   element: gsap.TweenTarget,
   config: {
-    scale?: number
-    y?: number
-    duration?: number
-    ease?: string
+    scale?: number;
+    y?: number;
+    duration?: number;
+    ease?: string;
   } = {},
 ): {
-  onEnter: () => void
-  onLeave: () => void
+  onEnter: () => void;
+  onLeave: () => void;
 } {
-  const hoverScale = config.scale || 1.05
-  const hoverY = config.y || -2
-  const duration = config.duration || 0.3
-  const ease = config.ease || 'power2.out'
+  const hoverScale = config.scale || 1.05;
+  const hoverY = config.y || -2;
+  const duration = config.duration || 0.3;
+  const ease = config.ease || 'power2.out';
 
   return {
     onEnter: () => {
@@ -119,7 +119,7 @@ export function createHoverAnimation(
         y: hoverY,
         duration,
         ease,
-      })
+      });
     },
     onLeave: () => {
       gsap.to(element, {
@@ -127,9 +127,9 @@ export function createHoverAnimation(
         y: 0,
         duration,
         ease,
-      })
+      });
     },
-  }
+  };
 }
 
 /**
@@ -138,9 +138,9 @@ export function createHoverAnimation(
 export function createPulseAnimation(
   element: gsap.TweenTarget,
   config: {
-    scale?: number
-    duration?: number
-    repeat?: number
+    scale?: number;
+    duration?: number;
+    repeat?: number;
   } = {},
 ): gsap.core.Tween {
   return gsap.to(element, {
@@ -149,7 +149,7 @@ export function createPulseAnimation(
     repeat: config.repeat || -1,
     yoyo: true,
     ease: 'sine.inOut',
-  })
+  });
 }
 
 /**
@@ -159,33 +159,33 @@ export function createSlideInAnimation(
   element: gsap.TweenTarget,
   direction: 'left' | 'right' | 'top' | 'bottom' = 'left',
   config: {
-    distance?: number
-    duration?: number
-    delay?: number
-    ease?: string
+    distance?: number;
+    duration?: number;
+    delay?: number;
+    ease?: string;
   } = {},
 ): gsap.core.Tween {
-  const distance = config.distance || 50
-  const duration = config.duration || 0.6
-  const delay = config.delay || 0
-  const ease = config.ease || 'power3.out'
+  const distance = config.distance || 50;
+  const duration = config.duration || 0.6;
+  const delay = config.delay || 0;
+  const ease = config.ease || 'power3.out';
 
-  let x = 0
-  let y = 0
+  let x = 0;
+  let y = 0;
 
   switch (direction) {
     case 'left':
-      x = -distance
-      break
+      x = -distance;
+      break;
     case 'right':
-      x = distance
-      break
+      x = distance;
+      break;
     case 'top':
-      y = -distance
-      break
+      y = -distance;
+      break;
     case 'bottom':
-      y = distance
-      break
+      y = distance;
+      break;
   }
 
   return gsap.from(element, {
@@ -195,5 +195,5 @@ export function createSlideInAnimation(
     duration,
     delay,
     ease,
-  })
+  });
 }

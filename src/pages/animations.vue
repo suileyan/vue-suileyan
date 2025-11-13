@@ -26,27 +26,27 @@
 </template>
 
 <script setup lang="ts">
-  import { onMounted, ref } from 'vue'
-  import { gsap } from 'gsap'
+  import { onMounted, ref } from 'vue';
+  import { gsap } from 'gsap';
 
-  const card1 = ref<HTMLElement | null>(null)
-  const card2 = ref<HTMLElement | null>(null)
+  const card1 = ref<HTMLElement | null>(null);
+  const card2 = ref<HTMLElement | null>(null);
 
   onMounted(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     tl.from(card1.value, { y: 20, opacity: 0, duration: 0.6 }).from(
       card2.value,
       { scale: 0.95, opacity: 0, duration: 0.6 },
       '-=0.2',
-    )
-  })
+    );
+  });
 
   function pulse() {
     gsap.fromTo(
       [card1.value, card2.value],
       { scale: 1 },
       { scale: 1.05, duration: 0.2, yoyo: true, repeat: 1, ease: 'power1.inOut' },
-    )
+    );
   }
 </script>
 

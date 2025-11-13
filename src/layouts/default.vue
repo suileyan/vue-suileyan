@@ -67,19 +67,19 @@
 </template>
 
 <script setup lang="ts">
-  import { useAppStore } from '@/stores/app'
-  import { raw } from '@/utils/noTrans'
-  import { setI18nLocale } from '@/plugins/i18n'
-  const year = new Date().getFullYear()
-  const app = useAppStore()
+  import { useAppStore } from '@/stores/app';
+  import { raw } from '@/utils/noTrans';
+  import { setI18nLocale } from '@/plugins/i18n';
+  const year = new Date().getFullYear();
+  const app = useAppStore();
 
   function onLangChange(e: Event) {
-    const value = (e.target as HTMLSelectElement).value as string
-    app.setLang(value)
+    const value = (e.target as HTMLSelectElement).value as string;
+    app.setLang(value);
   }
 
   function onI18nLocaleChange(e: Event) {
-    const value = (e.target as HTMLSelectElement).value as 'zh-CN' | 'en'
-    setI18nLocale(value)
+    const value = (e.target as HTMLSelectElement).value as 'zh-CN' | 'en';
+    setI18nLocale(value);
   }
 </script>

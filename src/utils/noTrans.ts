@@ -1,5 +1,5 @@
 export function noTrans<T extends string>(s: T): T {
-  return s
+  return s;
 }
 
-export const raw = noTrans
+export const raw = noTrans;

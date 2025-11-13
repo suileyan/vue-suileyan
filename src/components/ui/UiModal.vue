@@ -30,20 +30,20 @@
 </template>
 
 <script setup lang="ts">
-  import { onMounted, onBeforeUnmount } from 'vue'
+  import { onMounted, onBeforeUnmount } from 'vue';
 
-  defineProps<{ modelValue: boolean; title?: string }>()
-  const emit = defineEmits<{ (e: 'update:modelValue', v: boolean): void; (e: 'close'): void }>()
+  defineProps<{ modelValue: boolean; title?: string }>();
+  const emit = defineEmits<{ (e: 'update:modelValue', v: boolean): void; (e: 'close'): void }>();
 
   function close() {
-    emit('update:modelValue', false)
-    emit('close')
+    emit('update:modelValue', false);
+    emit('close');
   }
 
   function onKey(e: KeyboardEvent) {
-    if (e.key === 'Escape') close()
+    if (e.key === 'Escape') close();
   }
 
-  onMounted(() => window.addEventListener('keydown', onKey))
-  onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
+  onMounted(() => window.addEventListener('keydown', onKey));
+  onBeforeUnmount(() => window.removeEventListener('keydown', onKey));
 </script>

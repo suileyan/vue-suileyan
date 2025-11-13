@@ -25,12 +25,12 @@
 <script setup lang="ts">
   withDefaults(
     defineProps<{
-      modelValue?: string
-      label?: string
-      placeholder?: string
-      type?: string
-      error?: string
-      disabled?: boolean
+      modelValue?: string;
+      label?: string;
+      placeholder?: string;
+      type?: string;
+      error?: string;
+      disabled?: boolean;
     }>(),
     {
       modelValue: '',
@@ -40,7 +40,7 @@
       error: '',
       disabled: false,
     },
-  )
+  );
 
-  const emit = defineEmits<{ (e: 'update:modelValue', v: string): void }>()
+  const emit = defineEmits<{ (e: 'update:modelValue', v: string): void }>();
 </script>

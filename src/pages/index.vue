@@ -69,34 +69,34 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted } from 'vue'
-  import LineChart from '@/components/charts/LineChart.vue'
-  import { generateSampleData, createLineChartConfig } from '@/utils/chartUtils'
-  import { createPageLoadAnimation } from '@/utils/animationUtils'
+  import { ref, onMounted } from 'vue';
+  import LineChart from '@/components/charts/LineChart.vue';
+  import { generateSampleData, createLineChartConfig } from '@/utils/chartUtils';
+  import { createPageLoadAnimation } from '@/utils/animationUtils';
 
-  const titleEl = ref<HTMLElement | null>(null)
-  const orbEl = ref<HTMLElement | null>(null)
-  const cardEl = ref<HTMLElement | null>(null)
+  const titleEl = ref<HTMLElement | null>(null);
+  const orbEl = ref<HTMLElement | null>(null);
+  const cardEl = ref<HTMLElement | null>(null);
 
   // 生成模拟数据
-  const sampleData = generateSampleData(10, 50, 50)
+  const sampleData = generateSampleData(10, 50, 50);
 
   // 创建图表配置
   const { labels, datasets, options } = createLineChartConfig(
     sampleData.map((d) => d.date),
     sampleData.map((d) => d.value),
-  )
+  );
 
   const lineData = {
     labels,
     datasets,
-  }
+  };
 
-  const lineOptions = options
+  const lineOptions = options;
 
   onMounted(() => {
-    createPageLoadAnimation(titleEl.value, cardEl.value, orbEl.value)
-  })
+    createPageLoadAnimation(titleEl.value, cardEl.value, orbEl.value);
+  });
 </script>
 
 <style scoped>

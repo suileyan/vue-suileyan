@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 import {
   type ThemeType,
   DEFAULT_THEME_TRANSITION,
@@ -8,7 +8,7 @@ import {
   applyThemeTransitionVars,
   toggleThemeWithTransition,
   toggleThemeSimple,
-} from '@/utils/themeUtils'
+} from '@/utils/themeUtils';
 
 export const useAppStore = defineStore('app', {
   state: () => ({
@@ -21,22 +21,22 @@ export const useAppStore = defineStore('app', {
   }),
   actions: {
     applyThemeTransitionVars() {
-      applyThemeTransitionVars(this.themeTransition)
+      applyThemeTransitionVars(this.themeTransition);
     },
 
     toggleTheme() {
-      this.theme = toggleThemeSimple(this.theme)
+      this.theme = toggleThemeSimple(this.theme);
     },
 
     toggleThemeWithTransition(e?: MouseEvent) {
-      this.theme = toggleThemeWithTransition(this.theme, this.themeTransition, e)
+      this.theme = toggleThemeWithTransition(this.theme, this.themeTransition, e);
     },
 
     setThemeTransition(
       opts: Partial<{
-        enabled: boolean
-        in: Partial<{ durationMs: number; easing: string; radiusScale: number }>
-        out: Partial<{ durationMs: number; easing: string; radiusScale: number }>
+        enabled: boolean;
+        in: Partial<{ durationMs: number; easing: string; radiusScale: number }>;
+        out: Partial<{ durationMs: number; easing: string; radiusScale: number }>;
       }>,
     ) {
       this.themeTransition = {
@@ -44,21 +44,21 @@ export const useAppStore = defineStore('app', {
         ...opts,
         in: { ...this.themeTransition.in, ...opts.in },
         out: { ...this.themeTransition.out, ...opts.out },
-      } as typeof DEFAULT_THEME_TRANSITION
-      this.applyThemeTransitionVars()
+      } as typeof DEFAULT_THEME_TRANSITION;
+      this.applyThemeTransitionVars();
     },
 
     setTheme(theme: ThemeType) {
-      this.theme = theme
-      applyThemeToDOM(theme)
-      saveTheme(theme)
+      this.theme = theme;
+      applyThemeToDOM(theme);
+      saveTheme(theme);
     },
 
     setLang(lang: string) {
-      this.lang = lang
-      window.localStorage.setItem('lang', lang)
-      window.location.reload()
-      this.langVersion++
+      this.lang = lang;
+      window.localStorage.setItem('lang', lang);
+      window.location.reload();
+      this.langVersion++;
     },
   },
-})
+});

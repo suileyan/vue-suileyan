@@ -1,14 +1,14 @@
-import '../lang/index.js'
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
-import router from './router'
-import { createPinia } from 'pinia'
-import { initRRWeb } from './plugins/rrweb'
-import { registerSW } from 'virtual:pwa-register'
-import { handleError } from './utils/errorHandler'
-import formKitPlugin from './plugins/formkit'
-import { i18n } from './plugins/i18n'
+import '../lang/index.js';
+import { createApp } from 'vue';
+import './style.css';
+import App from './App.vue';
+import router from './router';
+import { createPinia } from 'pinia';
+import { initRRWeb } from './plugins/rrweb';
+import { registerSW } from 'virtual:pwa-register';
+import { handleError } from './utils/errorHandler';
+import formKitPlugin from './plugins/formkit';
+import { i18n } from './plugins/i18n';
 
 if (import.meta.env.DEV && import.meta.env['VITE_MSW'] !== 'false') {
   // 不阻塞应用挂载；尽力启动
@@ -21,23 +21,23 @@ if (import.meta.env.DEV && import.meta.env['VITE_MSW'] !== 'false') {
         },
       })
       .catch((error) => {
-        console.warn('[MSW] Mock服务启动失败，但不影响应用运行:', error)
-        handleError(error, 'MSW启动')
-      })
-  })
+        console.warn('[MSW] Mock服务启动失败，但不影响应用运行:', error);
+        handleError(error, 'MSW启动');
+      });
+  });
 }
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(createPinia())
-app.use(router)
-app.use(formKitPlugin)
-app.use(i18n)
+app.use(createPinia());
+app.use(router);
+app.use(formKitPlugin);
+app.use(i18n);
 
 // 在开发或启用时初始化非侵入式埋点（rrweb）
-initRRWeb()
+initRRWeb();
 
-app.mount('#app')
+app.mount('#app');
 
 // 注册 PWA
-void registerSW({ immediate: true })
+void registerSW({ immediate: true });

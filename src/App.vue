@@ -1,12 +1,12 @@
 <script setup lang="ts">
-  import { onMounted } from 'vue'
-  import { useAppStore } from './stores/app'
+  import { onMounted } from 'vue';
+  import { useAppStore } from './stores/app';
 
-  const app = useAppStore()
+  const app = useAppStore();
   onMounted(() => {
-    app.setTheme(app.theme)
-    app.applyThemeTransitionVars()
-  })
+    app.setTheme(app.theme);
+    app.applyThemeTransitionVars();
+  });
 </script>
 
 <template>

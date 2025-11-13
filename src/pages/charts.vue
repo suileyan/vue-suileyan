@@ -18,12 +18,12 @@
 </template>
 
 <script setup lang="ts">
-  import LineChart from '@/components/charts/LineChart.vue'
-  import BarChart from '@/components/charts/BarChart.vue'
+  import LineChart from '@/components/charts/LineChart.vue';
+  import BarChart from '@/components/charts/BarChart.vue';
 
-  const labels = Array.from({ length: 12 }).map((_, i) => `${i + 1}月`)
-  const dataA = labels.map(() => Math.round(50 + Math.random() * 50))
-  const dataB = labels.map(() => Math.round(10 + Math.random() * 20))
+  const labels = Array.from({ length: 12 }).map((_, i) => `${i + 1}月`);
+  const dataA = labels.map(() => Math.round(50 + Math.random() * 50));
+  const dataB = labels.map(() => Math.round(10 + Math.random() * 20));
 
   const lineData = {
     labels,
@@ -39,13 +39,13 @@
         borderWidth: 2,
       },
     ],
-  }
+  };
   const lineOptions = {
     maintainAspectRatio: false,
     responsive: true,
     plugins: { legend: { display: false } },
     scales: { x: { grid: { display: false } } },
-  }
+  };
 
   const barData = {
     labels,
@@ -60,7 +60,7 @@
         yAxisID: 'y1',
       },
     ],
-  }
+  };
   const barOptions = {
     maintainAspectRatio: false,
     responsive: true,
@@ -68,7 +68,7 @@
       y: { beginAtZero: true },
       y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false } },
     },
-  }
+  };
 </script>
 
 <route lang="json">

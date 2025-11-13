@@ -15,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-  import { useI18n } from 'vue-i18n'
-  import { ref } from 'vue'
-  const { t } = useI18n()
-  const count = ref(1)
+  import { useI18n } from 'vue-i18n';
+  import { ref } from 'vue';
+  const { t } = useI18n();
+  const count = ref(1);
 </script>

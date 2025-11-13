@@ -1,49 +1,49 @@
-import { defineConfig, loadEnv } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig, loadEnv } from 'vite';
+import vue from '@vitejs/plugin-vue';
 import AutoI18n, {
   GoogleTranslator,
   YoudaoTranslator,
   BaiduTranslator,
   VolcengineTranslator,
   EmptyTranslator,
-} from 'vite-auto-i18n-plugin'
-import Pages from 'vite-plugin-pages'
-import Layouts from 'vite-plugin-vue-layouts'
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import Inspect from 'vite-plugin-inspect'
-import { visualizer } from 'rollup-plugin-visualizer'
-import viteCompression from 'vite-plugin-compression'
-import { VitePWA } from 'vite-plugin-pwa'
-import { fileURLToPath, URL } from 'node:url'
-import ops from 'vite-plugin-ops'
+} from 'vite-auto-i18n-plugin';
+import Pages from 'vite-plugin-pages';
+import Layouts from 'vite-plugin-vue-layouts';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import Inspect from 'vite-plugin-inspect';
+import { visualizer } from 'rollup-plugin-visualizer';
+import viteCompression from 'vite-plugin-compression';
+import { VitePWA } from 'vite-plugin-pwa';
+import { fileURLToPath, URL } from 'node:url';
+import ops from 'vite-plugin-ops';
 
 const createTranslator = (env: Record<string, string>) => {
-  const translatorType = env.VITE_AUTO_I18N_TRANSLATOR || 'google'
+  const translatorType = env.VITE_AUTO_I18N_TRANSLATOR || 'google';
 
   switch (translatorType) {
     case 'youdao':
       return new YoudaoTranslator({
         appId: env.YOUDAO_APPID || '',
         appKey: env.YOUDAO_KEY || '',
-      })
+      });
 
     case 'baidu':
       return new BaiduTranslator({
         appId: env.BAIDU_APPID || '',
         appKey: env.BAIDU_KEY || '',
-      })
+      });
 
     case 'volcengine':
       return new VolcengineTranslator({
         apiKey: env.VOLCENGINE_API_KEY || '',
         model: env.VOLCENGINE_MODEL || 'doubao-1-5-pro-32k-250115',
-      })
+      });
 
     case 'empty':
-      return new EmptyTranslator()
+      return new EmptyTranslator();
 
     case 'google':
     default:
@@ -55,13 +55,13 @@ const createTranslator = (env: Record<string, string>) => {
             'User-Agent': 'Node',
           },
         },
-      })
+      });
   }
-}
+};
 
 const createI18nPlugin = (env: Record<string, string>) => {
-  const enabled = env.VITE_AUTO_I18N !== 'false'
-  const targetLangs = env.VITE_AUTO_I18N_TARGETS?.split(',') || ['en', 'ko', 'ja']
+  const enabled = env.VITE_AUTO_I18N !== 'false';
+  const targetLangs = env.VITE_AUTO_I18N_TARGETS?.split(',') || ['en', 'ko', 'ja'];
 
   return AutoI18n({
     enabled,
@@ -77,12 +77,12 @@ const createI18nPlugin = (env: Record<string, string>) => {
     rewriteConfig: true,
     originLang: 'zh-cn',
     translator: createTranslator(env),
-  })
-}
+  });
+};
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '')
+  const env = loadEnv(mode, process.cwd(), '');
 
   return {
     base: env.VITE_BASE ?? '/vue-suileyan/',
@@ -179,5 +179,5 @@ export default defineConfig(({ mode }) => {
     build: {
       assetsDir: 'assets',
     },
-  }
-})
+  };
+});

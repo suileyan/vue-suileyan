@@ -44,3 +44,6 @@ AGENTS.md
 QWEN.md
 
 .trae
+
+
+src/api/*

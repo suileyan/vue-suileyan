@@ -13,7 +13,7 @@ export const CHART_COLORS = {
     light: '#374151',
     dark: '#9CA3AF',
   },
-} as const
+} as const;
 
 // 默认图表选项
 export const DEFAULT_CHART_OPTIONS = {
@@ -27,7 +27,7 @@ export const DEFAULT_CHART_OPTIONS = {
     x: { grid: { display: false } },
     y: { grid: { color: CHART_COLORS.grid } },
   },
-} as const
+} as const;
 
 /**
  * 创建渐变背景色
@@ -37,13 +37,13 @@ export function createGradientBackground(
   chartArea: { top: number; bottom: number },
   colorStops: { stop: number; color: string }[],
 ): CanvasGradient {
-  const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom)
+  const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
 
   colorStops.forEach(({ stop, color }) => {
-    gradient.addColorStop(stop, color)
-  })
+    gradient.addColorStop(stop, color);
+  });
 
-  return gradient
+  return gradient;
 }
 
 /**
@@ -52,7 +52,7 @@ export function createGradientBackground(
 export const DEFAULT_GRADIENT_CONFIG = [
   { stop: 0, color: CHART_COLORS.primaryLight },
   { stop: 1, color: 'rgba(99,102,241,0)' },
-]
+];
 
 /**
  * 创建线图数据集配置
@@ -61,11 +61,11 @@ export function createLineDataset(
   data: number[],
   label: string = 'Trend',
   options: {
-    borderColor?: string
-    backgroundColor?: string | CanvasGradient
-    tension?: number
-    pointRadius?: number
-    borderWidth?: number
+    borderColor?: string;
+    backgroundColor?: string | CanvasGradient;
+    tension?: number;
+    pointRadius?: number;
+    borderWidth?: number;
   } = {},
 ) {
   return {
@@ -77,7 +77,7 @@ export function createLineDataset(
     tension: options.tension ?? 0.35,
     pointRadius: options.pointRadius ?? 0,
     borderWidth: options.borderWidth ?? 3,
-  }
+  };
 }
 
 /**
@@ -94,17 +94,17 @@ export function createGradientLineDataset(
     fill: true,
     borderColor: CHART_COLORS.primary,
     backgroundColor: (ctx: any) => {
-      const { chart } = ctx
-      const chartArea = chart.chartArea
+      const { chart } = ctx;
+      const chartArea = chart.chartArea;
 
-      if (!chartArea) return CHART_COLORS.primaryLighter
+      if (!chartArea) return CHART_COLORS.primaryLighter;
 
-      return createGradientBackground(chart.ctx, chartArea, gradientConfig)
+      return createGradientBackground(chart.ctx, chartArea, gradientConfig);
     },
     tension: 0.35,
     pointRadius: 0,
     borderWidth: 3,
-  }
+  };
 }
 
 /**
@@ -121,7 +121,7 @@ export function generateSampleData(
       day: '2-digit',
     }),
     value: Math.round(baseValue + Math.random() * variance),
-  }))
+  }));
 }
 
 /**
@@ -132,5 +132,5 @@ export function createLineChartConfig(labels: string[], data: number[], customOp
     labels,
     datasets: [createGradientLineDataset(data)],
     options: { ...DEFAULT_CHART_OPTIONS, ...customOptions },
-  }
+  };
 }

@@ -18,18 +18,18 @@
 </template>
 
 <script setup lang="ts">
-  import { computed } from 'vue'
+  import { computed } from 'vue';
 
-  type Variant = 'primary' | 'secondary' | 'outline' | 'ghost'
-  type Size = 'sm' | 'md' | 'lg'
+  type Variant = 'primary' | 'secondary' | 'outline' | 'ghost';
+  type Size = 'sm' | 'md' | 'lg';
 
   const props = withDefaults(
     defineProps<{
-      variant?: Variant
-      size?: Size
-      block?: boolean
-      loading?: boolean
-      disabled?: boolean
+      variant?: Variant;
+      size?: Size;
+      block?: boolean;
+      loading?: boolean;
+      disabled?: boolean;
     }>(),
     {
       variant: 'primary',
@@ -38,9 +38,9 @@
       loading: false,
       disabled: false,
     },
-  )
+  );
 
-  const emit = defineEmits<{ (e: 'click', evt: MouseEvent): void }>()
+  const emit = defineEmits<{ (e: 'click', evt: MouseEvent): void }>();
 
   const sizeClass = computed(
     () =>
@@ -49,7 +49,7 @@
         md: 'px-4 py-2 text-sm',
         lg: 'px-5 py-3 text-base',
       })[props.size],
-  )
+  );
 
   const variantClass = computed(
     () =>
@@ -60,10 +60,10 @@
           'border border-slate-300/70 text-slate-700 hover:border-primary-400 dark:text-slate-200',
         ghost: 'bg-transparent text-slate-700 hover:bg-slate-100/60 dark:text-slate-200',
       })[props.variant],
-  )
+  );
 
   function onClick(evt: MouseEvent) {
-    if (props.disabled || props.loading) return
-    emit('click', evt)
+    if (props.disabled || props.loading) return;
+    emit('click', evt);
   }
 </script>

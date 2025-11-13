@@ -76,16 +76,16 @@
 </template>
 
 <script setup lang="ts">
-  import { computed, ref } from 'vue'
+  import { computed, ref } from 'vue';
 
-  const name = ref('')
-  const email = ref('')
-  const on = ref(false)
-  const open = ref(false)
+  const name = ref('');
+  const email = ref('');
+  const on = ref(false);
+  const open = ref(false);
 
   const emailError = computed(() =>
     /.+@.+/.test(email.value) || email.value === '' ? '' : 'Invalid email',
-  )
+  );
 </script>
 
 <route lang="json">

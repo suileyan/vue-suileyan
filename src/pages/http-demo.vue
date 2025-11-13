@@ -23,46 +23,46 @@
 </template>
 
 <script setup lang="ts">
-  import ErrorBoundary from '@/components/ErrorBoundary.vue'
-  import { ref } from 'vue'
-  import { get } from '@/services/alova'
-  import { createRetryHandler } from '@/utils/errorHandler'
+  import ErrorBoundary from '@/components/ErrorBoundary.vue';
+  import { ref } from 'vue';
+  import { get } from '@/services/alova';
+  import { createRetryHandler } from '@/utils/errorHandler';
 
-  const page = ref(1)
-  const pageSize = ref(10)
-  const loading = ref(false)
-  const error = ref<string | null>(null)
-  const list = ref<Array<{ id: string; name: string; email: string }>>([])
-  let currentMethod: any = null
+  const page = ref(1);
+  const pageSize = ref(10);
+  const loading = ref(false);
+  const error = ref<string | null>(null);
+  const list = ref<Array<{ id: string; name: string; email: string }>>([]);
+  let currentMethod: any = null;
 
   async function loadUsers() {
-    loading.value = true
-    error.value = null
+    loading.value = true;
+    error.value = null;
     try {
-      currentMethod = get('/users', { page: page.value, pageSize: pageSize.value })
-      const data = await currentMethod.send()
-      list.value = data.list ?? []
+      currentMethod = get('/users', { page: page.value, pageSize: pageSize.value });
+      const data = await currentMethod.send();
+      list.value = data.list ?? [];
     } catch (e: any) {
-      error.value = e?.message || '请求失败'
-      list.value = []
+      error.value = e?.message || '请求失败';
+      list.value = [];
     } finally {
-      loading.value = false
+      loading.value = false;
     }
   }
 
   function cancel() {
     if (currentMethod?.abort) {
-      currentMethod.abort('user cancel')
+      currentMethod.abort('user cancel');
     }
   }
 
   async function loadWithRetry() {
-    const runner = createRetryHandler(3, 200)
+    const runner = createRetryHandler(3, 200);
     await runner(async () => {
-      currentMethod = get('/users', { page: page.value, pageSize: pageSize.value })
-      const data = await currentMethod.send()
-      list.value = data.list ?? []
-      return true
-    }, 'HTTP 示例')
+      currentMethod = get('/users', { page: page.value, pageSize: pageSize.value });
+      const data = await currentMethod.send();
+      list.value = data.list ?? [];
+      return true;
+    }, 'HTTP 示例');
   }
 </script>

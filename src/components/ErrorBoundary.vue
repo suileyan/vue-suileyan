@@ -9,17 +9,17 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onErrorCaptured } from 'vue'
-  import { handleError } from '@/utils/errorHandler'
-  import NProgress from 'nprogress'
-  const err = ref<unknown | null>(null)
+  import { ref, onErrorCaptured } from 'vue';
+  import { handleError } from '@/utils/errorHandler';
+  import NProgress from 'nprogress';
+  const err = ref<unknown | null>(null);
   onErrorCaptured((e) => {
-    err.value = e
-    NProgress.done()
-    handleError(e, 'ErrorBoundary')
-    return false
-  })
+    err.value = e;
+    NProgress.done();
+    handleError(e, 'ErrorBoundary');
+    return false;
+  });
   function reset() {
-    err.value = null
+    err.value = null;
   }
 </script>

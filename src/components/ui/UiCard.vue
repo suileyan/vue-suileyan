@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-  import { computed } from 'vue'
+  import { computed } from 'vue';
 
   const props = withDefaults(
     defineProps<{ glass?: boolean; hoverable?: boolean; title?: string }>(),
@@ -26,7 +26,7 @@
       hoverable: false,
       title: '',
     },
-  )
+  );
 
   const wrapperClass = computed(() => [
     'rounded-2xl border shadow-sm transition',
@@ -34,5 +34,5 @@
       ? 'bg-white/70 dark:bg-white/5 border-white/30 backdrop-blur-xl'
       : 'bg-white dark:bg-slate-900 border-slate-200/70 dark:border-slate-800',
     props.hoverable && 'hover:shadow-md',
-  ])
+  ]);
 </script>

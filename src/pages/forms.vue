@@ -218,11 +218,11 @@
 </template>
 
 <script setup lang="ts">
-  import { reactive } from 'vue'
-  import { get } from '@/services/alova'
+  import { reactive } from 'vue';
+  import { get } from '@/services/alova';
 
-  const model = reactive({ name: '', email: '' })
-  const errors = reactive<{ name?: string; email?: string }>({})
+  const model = reactive({ name: '', email: '' });
+  const errors = reactive<{ name?: string; email?: string }>({});
 
   const formKitData = reactive({
     username: '',
@@ -234,89 +234,89 @@
     notification: '',
     bio: '',
     terms: false,
-  })
+  });
 
   const formKitErrors = reactive({
     username: '',
     email: '',
-  })
+  });
 
   function validate() {
-    errors.name = model.name ? '' : '请输入用户名'
-    errors.email = /.+@.+/.test(model.email) ? '' : '邮箱格式不正确'
-    return !errors.name && !errors.email
+    errors.name = model.name ? '' : '请输入用户名';
+    errors.email = /.+@.+/.test(model.email) ? '' : '邮箱格式不正确';
+    return !errors.name && !errors.email;
   }
 
   async function submit() {
-    if (!validate()) return
+    if (!validate()) return;
     // 请求示例：真实项目中替换为你的接口
     try {
-      await get('/demo').send()
-      alert('提交成功(演示)')
+      await get('/demo').send();
+      alert('提交成功(演示)');
     } catch (err) {
-      alert('提交失败(演示)')
+      alert('提交失败(演示)');
     }
   }
 
   function reset() {
-    model.name = ''
-    model.email = ''
-    errors.name = ''
-    errors.email = ''
+    model.name = '';
+    model.email = '';
+    errors.name = '';
+    errors.email = '';
   }
 
   // FormKit 表单验证
   function validateFormKit() {
-    formKitErrors.username = formKitData.username ? '' : '请输入用户名'
-    formKitErrors.email = /.+@.+/.test(formKitData.email) ? '' : '邮箱格式不正确'
+    formKitErrors.username = formKitData.username ? '' : '请输入用户名';
+    formKitErrors.email = /.+@.+/.test(formKitData.email) ? '' : '邮箱格式不正确';
 
     if (
       formKitData.password &&
       formKitData.passwordConfirm &&
       formKitData.password !== formKitData.passwordConfirm
     ) {
-      alert('两次输入的密码不一致')
-      return false
+      alert('两次输入的密码不一致');
+      return false;
     }
 
     if (!formKitData.terms) {
-      alert('请同意服务条款')
-      return false
+      alert('请同意服务条款');
+      return false;
     }
 
-    return !formKitErrors.username && !formKitErrors.email
+    return !formKitErrors.username && !formKitErrors.email;
   }
 
   // FormKit 表单提交
   async function submitFormKit() {
-    if (!validateFormKit()) return
+    if (!validateFormKit()) return;
 
-    console.log('FormKit 表单数据:', formKitData)
+    console.log('FormKit 表单数据:', formKitData);
     try {
-      await get('/demo').send()
-      alert('FormKit 表单提交成功！')
+      await get('/demo').send();
+      alert('FormKit 表单提交成功！');
     } catch (err) {
-      alert('FormKit 表单提交失败')
+      alert('FormKit 表单提交失败');
     }
   }
 
   // FormKit 表单重置
   function resetFormKit() {
     // Reset formKitData fields to their initial values
-    formKitData.username = ''
-    formKitData.email = ''
-    formKitData.password = ''
-    formKitData.passwordConfirm = ''
-    formKitData.gender = ''
-    formKitData.hobbies = []
-    formKitData.notification = ''
-    formKitData.bio = ''
-    formKitData.terms = false
+    formKitData.username = '';
+    formKitData.email = '';
+    formKitData.password = '';
+    formKitData.passwordConfirm = '';
+    formKitData.gender = '';
+    formKitData.hobbies = [];
+    formKitData.notification = '';
+    formKitData.bio = '';
+    formKitData.terms = false;
 
     // 清除错误信息
     Object.keys(formKitErrors).forEach((key) => {
-      formKitErrors[key as keyof typeof formKitErrors] = ''
-    })
+      formKitErrors[key as keyof typeof formKitErrors] = '';
+    });
   }
 </script>
 

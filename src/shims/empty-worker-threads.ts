@@ -4,12 +4,12 @@
 
 export class Worker {
   constructor() {
-    throw new Error('worker_threads.Worker is not available in the browser')
+    throw new Error('worker_threads.Worker is not available in the browser');
   }
 }
 
-export const isMainThread = true
-export const parentPort = null
-export const workerData = undefined as unknown
+export const isMainThread = true;
+export const parentPort = null;
+export const workerData = undefined as unknown;
 
-export default {} as any
+export default {} as any;

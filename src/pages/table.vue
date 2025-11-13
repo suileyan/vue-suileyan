@@ -122,15 +122,15 @@
 </template>
 
 <script setup lang="ts">
-  import { computed, ref, watch } from 'vue'
+  import { computed, ref, watch } from 'vue';
 
-  type Row = { id: number; name: string; score: number }
+  type Row = { id: number; name: string; score: number };
 
-  const q = ref('')
-  const minScore = ref(0)
-  const sortBy = ref<'name' | 'score'>('score')
-  const sortAsc = ref(true)
-  const dense = ref(false)
+  const q = ref('');
+  const minScore = ref(0);
+  const sortBy = ref<'name' | 'score'>('score');
+  const sortAsc = ref(true);
+  const dense = ref(false);
 
   const rows = ref<Row[]>(
     Array.from({ length: 48 }).map((_, i) => ({
@@ -138,69 +138,69 @@
       name: `User ${i + 1}`,
       score: Math.round(50 + Math.random() * 50),
     })),
-  )
+  );
 
   const filtered = computed(() =>
     rows.value.filter(
       (r) => r.name.toLowerCase().includes(q.value.toLowerCase()) && r.score >= minScore.value,
     ),
-  )
+  );
 
   const view = computed(() => {
-    const data = [...filtered.value]
+    const data = [...filtered.value];
     data.sort((a, b) => {
-      const dir = sortAsc.value ? 1 : -1
-      if (sortBy.value === 'name') return a.name.localeCompare(b.name) * dir
-      return (a.score - b.score) * dir
-    })
-    return data
-  })
+      const dir = sortAsc.value ? 1 : -1;
+      if (sortBy.value === 'name') return a.name.localeCompare(b.name) * dir;
+      return (a.score - b.score) * dir;
+    });
+    return data;
+  });
 
-  const page = ref(1)
-  const pageSize = ref(10)
-  const totalPages = computed(() => Math.max(1, Math.ceil(view.value.length / pageSize.value)))
-  const displayPage = computed(() => Math.min(page.value, totalPages.value))
+  const page = ref(1);
+  const pageSize = ref(10);
+  const totalPages = computed(() => Math.max(1, Math.ceil(view.value.length / pageSize.value)));
+  const displayPage = computed(() => Math.min(page.value, totalPages.value));
   const paged = computed(() => {
-    const start = (displayPage.value - 1) * pageSize.value
-    return view.value.slice(start, start + pageSize.value)
-  })
+    const start = (displayPage.value - 1) * pageSize.value;
+    return view.value.slice(start, start + pageSize.value);
+  });
 
   function toggleSort() {
-    sortAsc.value = !sortAsc.value
+    sortAsc.value = !sortAsc.value;
   }
   function setSort(key: 'name' | 'score') {
-    if (sortBy.value === key) sortAsc.value = !sortAsc.value
+    if (sortBy.value === key) sortAsc.value = !sortAsc.value;
     else {
-      sortBy.value = key
-      sortAsc.value = true
+      sortBy.value = key;
+      sortAsc.value = true;
     }
   }
 
   function initial(name: string) {
-    return name?.trim()?.charAt(0)?.toUpperCase() || '?'
+    return name?.trim()?.charAt(0)?.toUpperCase() || '?';
   }
   function avatarStyle(seed: string) {
-    let h = 0
-    for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) % 360
-    return { backgroundColor: `hsl(${h}, 70%, 45%)` }
+    let h = 0;
+    for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) % 360;
+    return { backgroundColor: `hsl(${h}, 70%, 45%)` };
   }
   function badgeLabel(score: number) {
-    if (score >= 90) return '优秀'
-    if (score >= 80) return '良好'
-    if (score >= 60) return '及格'
-    return '待提升'
+    if (score >= 90) return '优秀';
+    if (score >= 80) return '良好';
+    if (score >= 60) return '及格';
+    return '待提升';
   }
   function badgeClass(score: number) {
-    if (score >= 90) return 'bg-green-100 text-green-700'
-    if (score >= 80) return 'bg-emerald-100 text-emerald-700'
-    if (score >= 60) return 'bg-amber-100 text-amber-700'
-    return 'bg-rose-100 text-rose-700'
+    if (score >= 90) return 'bg-green-100 text-green-700';
+    if (score >= 80) return 'bg-emerald-100 text-emerald-700';
+    if (score >= 60) return 'bg-amber-100 text-amber-700';
+    return 'bg-rose-100 text-rose-700';
   }
 
   // 当筛选/排序/每页数量变化时回到第 1 页
   watch([q, minScore, sortBy, sortAsc, pageSize], () => {
-    page.value = 1
-  })
+    page.value = 1;
+  });
 </script>
 
 <route lang="json">

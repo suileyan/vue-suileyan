@@ -10,10 +10,10 @@
 </template>
 
 <script setup lang="ts">
-  import { computed } from 'vue'
+  import { computed } from 'vue';
 
-  type Variant = 'primary' | 'success' | 'warning' | 'neutral'
-  const props = withDefaults(defineProps<{ variant?: Variant }>(), { variant: 'primary' })
+  type Variant = 'primary' | 'success' | 'warning' | 'neutral';
+  const props = withDefaults(defineProps<{ variant?: Variant }>(), { variant: 'primary' });
 
   const variantClass = computed(
     () =>
@@ -24,5 +24,5 @@
         neutral:
           'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-200/70 dark:border-slate-700',
       })[props.variant],
-  )
+  );
 </script>
