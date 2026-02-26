@@ -243,5 +243,3 @@ VITE_BAIDU_APP_KEY=
 VITE_VOLCENGINE_API_KEY=
 VITE_VOLCENGINE_MODEL=
 ```
-
-提示：请勿将 `.env*` 提交到仓库；`lang/` 为自动翻译产物目录，也应忽略提交。已将别名 `lang` 映射到 `./lang`，避免 Vite 导入分析报错。
