@@ -2,10 +2,10 @@
 
 一个生产可用的 Vue 3 启动模板，面向中小型前端项目与快速原型开发，集成：
 
-- 路由与布局：`vite-plugin-pages` 自动路由 · `vite-plugin-vue-layouts` 布局
+- 路由：`vite-plugin-pages` 自动路由（布局集成于 `App.vue`）
 - 状态与网络：`pinia` 状态管理 · `alova` 请求（`axios`/`xhr` 适配）
 - 可视化与动画：`ECharts` / `vue-echarts`、`Chart.js` / `vue-chartjs`、`GSAP`
-- 工程化：ESLint Flat + Prettier、Vitest + Playwright、Tailwind v4、PWA、压缩与打包分析
+- 工程化：ESLint Flat + Prettier、Vitest + Playwright、Tailwind v4、压缩与打包分析
 - 体验与埋点：`nprogress` 页面进度条、`rrweb` 非侵入式录制（按需开启）
 
 当前版本：`0.0.0` · 维护状态：活跃维护（CI Node `22`，推荐本地 Node `>=18`，最佳 `22`）。
@@ -14,17 +14,17 @@
 
 ## 项目概述
 
-- 核心功能：提供现代 Vue 3 工程化模板，内置 i18n、HTTP 示例、错误边界、单元与端到端测试、PWA 等。
+- 核心功能：提供现代 Vue 3 工程化模板，内置 i18n、HTTP 示例、错误边界、单元与端到端测试等。
 - 目标用户：需要快速搭建可上线的 Vue 应用的前端工程师与团队。
 - 使用场景：企业后台、数据可视化、运营平台、SaaS 前端、原型验证。
 - 架构与技术栈：
-  - 前端框架：`vue@^3.5` + `vue-router@^4.5`
-  - 构建工具：`vite@^7`（见 `vite.config.ts`）
+  - 前端框架：`vue@^3.5` + `vue-router@^5`
+  - 构建工具：`vite@^8`（Rolldown + Oxc，见 `vite.config.ts`）
   - 样式：`tailwindcss@^4` + `@tailwindcss/postcss` · 可选 `daisyui`
   - 状态管理：`pinia@^3`
-  - 网络层：`alova@^3.3` + `axios@^1.12` 或 `@alova/adapter-xhr`
-  - 测试：`vitest@^4`（`happy-dom`）· `@playwright/test@^1.56`（E2E）
-  - 其他：`vue-i18n@^11`、`unplugin-*` 自动导入与组件、`vite-plugin-pwa`、`rollup-plugin-visualizer`
+  - 网络层：`alova@^3` + `axios@^1` 或 `@alova/adapter-xhr`
+  - 测试：`vitest@^4`（`happy-dom`）· `@playwright/test@^1`（E2E）
+  - 其他：`vue-i18n@^11`、`unplugin-*` 自动导入与组件、`rollup-plugin-visualizer`
 
 ---
 
@@ -33,54 +33,51 @@
 - 系统要求：
   - 操作系统：macOS / Linux / Windows
   - Node：`>=18`（与 CI 对齐推荐 `22`）
-  - 包管理器：`yarn@1.x`（已配置缓存与锁定）
+  - 包管理器：`npm`（已配置锁定文件 `package-lock.json`）
 - 安装指南：
-  - 安装依赖：`yarn install`
-  - 安装 Playwright 浏览器（E2E）：`yarn playwright install`
+  - 安装依赖：`npm install`
+  - 安装 Playwright 浏览器（E2E）：`npx playwright install`
 - 开发依赖清单（用途与版本）：
   - 构建与框架：
-    - `vite@^7.1.7` — 现代构建工具
-    - `@vitejs/plugin-vue@^6.0.1` — Vue SFC 支持
-    - `unplugin-auto-import@^20.2.0` — 自动导入 `vue`/`pinia` 等 API
-    - `unplugin-vue-components@^29.1.0` — 组件按需自动导入
-    - `unplugin-icons@^22.3.0` · `@iconify-json/heroicons@^1.2.3` — 图标组件
-    - `vite-plugin-pages@^0.33.1` — 文件系统路由
-    - `vite-plugin-vue-layouts@^0.11.0` — 布局系统
-    - `vite-plugin-pwa@^1.0.3` — PWA 支持
-    - `vite-plugin-compression@^0.5.1` — gzip/br 压缩
-    - `vite-plugin-inspect@^11.3.3` — 插件调试
-    - `rollup-plugin-visualizer@^6.0.3` — 构建体积分析
-    - `vite-auto-i18n-plugin@^1.1.9` — 自动翻译（可选）
+    - `vite@^8` — 现代构建工具（Rolldown + Oxc）
+    - `@vitejs/plugin-vue@^6` — Vue SFC 支持
+    - `unplugin-auto-import@^21` — 自动导入 `vue`/`pinia` 等 API
+    - `unplugin-vue-components@^31` — 组件按需自动导入
+    - `unplugin-icons@^23` · `@iconify-json/heroicons@^1` — 图标组件
+    - `vite-plugin-pages@^0.33` — 文件系统路由
+    - `vite-plugin-compression@^0.5` — gzip/br 压缩
+    - `rollup-plugin-visualizer@^7` — 构建体积分析
+    - `vite-auto-i18n-plugin@^1` — 自动翻译（可选）
   - 语言与类型：
-    - `typescript@~5.8.3` — TypeScript 语言
-    - `vue-tsc@^3.0.7` — Vue SFC 类型检查（`yarn typecheck`）
-    - `@vue/tsconfig@^0.8.1` — Vue TS 基础配置
+    - `typescript@~5.9` — TypeScript 语言
+    - `vue-tsc@^3` — Vue SFC 类型检查（`npm run typecheck`）
+    - `@vue/tsconfig@^0.9` — Vue TS 基础配置
   - 样式与后处理：
-    - `tailwindcss@^4.1.13` — 原子化 CSS 框架
-    - `@tailwindcss/postcss@^4.1.13` · `postcss@^8.5.6` — PostCSS 集成
-    - `autoprefixer@^10.4.21` — CSS 兼容性前缀
-    - `daisyui@^5.1.25` — Tailwind 组件库（可选）
+    - `tailwindcss@^4` — 原子化 CSS 框架
+    - `@tailwindcss/postcss@^4` · `postcss@^8` — PostCSS 集成
+    - `autoprefixer@^10` — CSS 兼容性前缀
+    - `daisyui@^5` — Tailwind 组件库（可选）
   - 代码质量：
-    - `eslint@^9.36.0` — ESLint 扁平配置
-    - `@eslint/js@^9.36.0` — JS 规则集
-    - `eslint-plugin-vue@^10.5.0` · `vue-eslint-parser@^10.2.0` — Vue 规则与解析
-    - `@typescript-eslint/parser@^8.44.1` · `@typescript-eslint/eslint-plugin@^8.44.1` — TS 规则与解析
-    - `prettier@^3.6.2` · `eslint-plugin-prettier@^5.5.4` — 统一格式与规则集成
-    - `husky@^9.1.7` · `lint-staged@^16.2.3` — 提交前钩子与增量修复
-    - `commitlint@^20.x`（`@commitlint/cli` · `@commitlint/config-conventional`）— 提交规范
+    - `eslint@^10` — ESLint 扁平配置
+    - `@eslint/js@^10` — JS 规则集
+    - `eslint-plugin-vue@^10` · `vue-eslint-parser@^10` — Vue 规则与解析
+    - `@typescript-eslint/parser@^8` · `@typescript-eslint/eslint-plugin@^8` — TS 规则与解析
+    - `prettier@^3` · `eslint-plugin-prettier@^5` — 统一格式与规则集成
+    - `husky@^9` · `lint-staged@^16` — 提交前钩子与增量修复
+    - `commitlint@^20`（`@commitlint/cli` · `@commitlint/config-conventional`）— 提交规范
   - 测试与模拟：
-    - `vitest@^4.0.8` — 单元测试框架
-    - `@vitest/coverage-v8@^4.0.8` — 覆盖率
-    - `happy-dom@^20.0.10` — 浏览器环境模拟
-    - `@playwright/test@^1.56.1` — 端到端测试
-    - `msw@^2.11.3` — 接口模拟
+    - `vitest@^4` — 单元测试框架
+    - `@vitest/coverage-v8@^4` — 覆盖率
+    - `happy-dom@^20` — 浏览器环境模拟
+    - `@playwright/test@^1` — 端到端测试
+    - `msw@^2` — 接口模拟
   - 其它工具：
-    - `nprogress@^0.2.0` — 进度条
-    - `json-format@^1.0.1` — JSON 格式化
+    - `nprogress@^0.2` — 进度条
+    - `json-format@^1` — JSON 格式化
     - `tunnel@^0.0.6` — 代理支持（翻译等）
-    - `@vitalets/google-translate-api@^9.2.1` — Google 翻译（可选）
+    - `@vitalets/google-translate-api@^9` — Google 翻译（可选）
 
-特殊配置说明：项目使用 Vite（非 webpack/babel）。关键构建配置位于 `vite.config.ts`，包含路由、自动导入、PWA、压缩与 i18n 插件等。
+特殊配置说明：项目使用 Vite 8（基于 Rolldown + Oxc）。关键构建配置位于 `vite.config.ts`，包含路由、自动导入、压缩与 i18n 插件等。
 
 ---
 
@@ -109,7 +106,7 @@ VITE_VOLCENGINE_MODEL=
 ```
 
 - 关键配置文件：
-  - `vite.config.ts` — 构建与插件配置（含 `base` 路径、PWA、自动路由、i18n）
+  - `vite.config.ts` — 构建与插件配置（含 `base` 路径、自动路由、i18n）
   - `eslint.config.mjs` — ESLint 扁平配置与忽略项
   - `tailwind.config.cjs` · `postcss.config.cjs` — 样式系统配置
   - `tsconfig.app.json` · `tsconfig.node.json` — TS 项目配置
@@ -117,16 +114,16 @@ VITE_VOLCENGINE_MODEL=
   - `.github/workflows/*.yml` — CI、Pages 发布与 Release 模板
 - 首次运行前步骤：
   - 配置 `.env`（参考 `.env.example`）
-  - 安装依赖：`yarn install`
-  - 安装浏览器：`yarn playwright install`
-  - 启动开发：`yarn dev`
+  - 安装依赖：`npm install`
+  - 安装浏览器：`npx playwright install`
+  - 启动开发：`npm run dev`
 
 ---
 
 ## 模板定制指南
 
 - 修改现有功能：
-  - 路由与页面：在 `src/pages` 增删改 `.vue` 文件；布局在 `src/layouts`（默认 `default.vue`）。
+  - 路由与页面：在 `src/pages` 增删改 `.vue` 文件；布局直接在 `src/App.vue` 中定义。
   - 状态：在 `src/stores` 创建/修改 Pinia Store。
   - HTTP：在 `src/services/alova.ts` 配置接口根路径和适配器；示例页 `src/pages/http-demo.vue`。
   - i18n：`src/plugins/i18n.ts` 使用 `vue-i18n`；自动翻译由 `vite-auto-i18n-plugin` 控制（`VITE_AUTO_I18N`）。
@@ -146,19 +143,19 @@ VITE_VOLCENGINE_MODEL=
 ## 开发工作流
 
 - 常用命令：
-  - 启动开发：`yarn dev`
-  - 代码规范：`yarn lint` · 自动修复 `yarn lint:fix`
-  - 格式化：`yarn format` · 校验 `yarn format:check`
-  - 类型检查：`yarn typecheck` · 监听 `yarn typecheck:watch` · 严格 `yarn typecheck:strict`
-  - 单元测试：`yarn test` / `yarn test:watch` / `yarn test:coverage`
+  - 启动开发：`npm run dev`
+  - 代码规范：`npm run lint` · 自动修复 `npm run lint:fix`
+  - 格式化：`npm run format` · 校验 `npm run format:check`
+  - 类型检查：`npm run typecheck` · 监听 `npm run typecheck:watch` · 严格 `npm run typecheck:strict`
+  - 单元测试：`npm run test` / `npm run test:watch` / `npm run test:coverage`
   - 端到端测试：
-    - 预览服务：`yarn preview`
-    - 运行 E2E：`yarn e2e`（确保 `playwright.config.ts` 的 `baseURL` 与预览路径一致，如 `http://localhost:4173/vue-suileyan/`）
+    - 预览服务：`npm run preview`
+    - 运行 E2E：`npm run e2e`（确保 `playwright.config.ts` 的 `baseURL` 与预览路径一致，如 `http://localhost:4173/vue-suileyan/`）
 - 代码规范与质量流程：
   - 提交前自动：`husky + lint-staged` 执行 ESLint/Prettier 增量修复。
   - 严格检查：
     - ESLint 扁平配置，TS 类型感知规则（如 `no-floating-promises`）。
-    - `yarn typecheck:strict` 将 ESLint Warning 视为失败。
+    - `npm run typecheck:strict` 将 ESLint Warning 视为失败。
   - 提交规范：`commitlint` 采用 Conventional Commits（如 `feat: xxx`）。
   - 版本管理：CI 构建与产物上传；可结合 Release 工作流（`release-template.yml`）。
 
@@ -166,14 +163,14 @@ VITE_VOLCENGINE_MODEL=
 
 ## 部署说明
 
-- 生产构建：`yarn build`
-- 本地预览：`yarn preview`
+- 生产构建：`npm run build`
+- 本地预览：`npm run preview`
 - 部署到不同平台：
   - 静态站点（Nginx/Apache/OSS）：上传 `dist/`；注意 `vite.config.ts` 的 `base`（如子路径部署设置 `'/vue-suileyan/'`）。
   - GitHub Pages：使用 `.github/workflows/pages.yml`（已处理 `VITE_BASE` 与 `404.html`）。
 - 性能优化建议：
   - 使用按需加载与路由级代码分割（`vite-plugin-pages` 默认启用 `importMode: 'async'`）。
-  - 启用 `brotli/gzip` 压缩与 PWA 缓存（已配置）。
+  - 启用 `brotli/gzip` 压缩（已配置）。
   - 利用 `rollup-plugin-visualizer` 分析包体并做依赖瘦身。
 
 ---
@@ -182,8 +179,8 @@ VITE_VOLCENGINE_MODEL=
 
 - 已知问题与解决方案：
   - ESLintIgnoreWarning：删除根目录 `.eslintignore`，改为在 `eslint.config.mjs` 使用 `ignores`。
-  - Playwright 浏览器缺失：执行 `yarn playwright install`。
-  - E2E 连接被拒：先运行 `yarn preview`，确保 `playwright.config.ts` 的 `baseURL` 与预览一致。
+  - Playwright 浏览器缺失：执行 `npx playwright install`。
+  - E2E 连接被拒：先运行 `npm run preview`，确保 `playwright.config.ts` 的 `baseURL` 与预览一致。
   - Vitest 假定时导致超时：移除假定时并缩短重试延时。
 - 常见问题：
   - 如何切换 HTTP 适配器：设置 `VITE_HTTP_ADAPTER=axios|xhr`。
@@ -191,14 +188,14 @@ VITE_VOLCENGINE_MODEL=
   - 如何启用 rrweb：设置 `VITE_RRWEB=true` 或 `VITE_ANALYTICS=true`。
 - 贡献指南：
   - Fork 后创建特性分支，遵循 Conventional Commits，提交 PR。
-  - 在 PR 中附带：`yarn lint`、`yarn typecheck`、`yarn test`、`yarn build` 通过的结果。
+  - 在 PR 中附带：`npm run lint`、`npm run typecheck`、`npm run test`、`npm run build` 通过的结果。
 
 ---
 
 ## 目录结构
 
 - `src/` 应用源码：
-  - `pages/`（自动路由） · `layouts/`（默认 `default.vue`） · `components/` · `stores/`（Pinia） · `services/alova.ts` · `router/` · `plugins/rrweb.ts` · `types/`
+  - `pages/`（自动路由） · `App.vue`（含布局） · `components/` · `stores/`（Pinia） · `services/alova.ts` · `router/` · `plugins/rrweb.ts` · `types/`
 - `public/` 静态资源（`favicon.svg` 用作浏览器标签与 Header 图标）
 - `lang/` 自动翻译产物（启用 `VITE_AUTO_I18N` 时生成，已加入 `.gitignore`）
 - `dist/` 构建产物
@@ -208,12 +205,12 @@ VITE_VOLCENGINE_MODEL=
 
 ## 快速开始
 
-- 安装依赖：`yarn install`
-- 开发：`yarn dev`
-- 构建（含严格类型检查）：`yarn build`
-- 本地预览：`yarn preview`
-- 代码规范：`yarn lint` / `yarn lint:fix` / `yarn format` / `yarn format:check`
-- 类型检查：`yarn typecheck`（编辑器同级严格）/ `yarn typecheck:watch` / `yarn typecheck:strict`
+- 安装依赖：`npm install`
+- 开发：`npm run dev`
+- 构建（含严格类型检查）：`npm run build`
+- 本地预览：`npm run preview`
+- 代码规范：`npm run lint` / `npm run lint:fix` / `npm run format` / `npm run format:check`
+- 类型检查：`npm run typecheck`（编辑器同级严格）/ `npm run typecheck:watch` / `npm run typecheck:strict`
 
 ---
 
