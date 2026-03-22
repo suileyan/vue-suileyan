@@ -74,7 +74,6 @@
     - `happy-dom@^20.0.10` — 浏览器环境模拟
     - `@playwright/test@^1.56.1` — 端到端测试
     - `msw@^2.11.3` — 接口模拟
-    - `mockjs@^1.1.0` — 数据模拟
   - 其它工具：
     - `nprogress@^0.2.0` — 进度条
     - `json-format@^1.0.1` — JSON 格式化

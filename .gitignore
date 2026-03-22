@@ -21,9 +21,18 @@ pnpm-debug.log*
 # OS junk
 Thumbs.db
 
-# Package manager lockfiles (use yarn.lock in this repo)
-/package-lock.json
+# Package manager lockfiles (use package-lock.json in this repo)
+/yarn.lock
 /pnpm-lock.yaml
+
+# Playwright test results
+test-results/
+playwright-report/
+blob-report/
+
+# Auto-generated type declarations
+src/auto-imports.d.ts
+src/components.d.ts
 
 # Local tooling repo (not needed in app)
 _auto_i18n_repo/

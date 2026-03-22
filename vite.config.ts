@@ -8,17 +8,13 @@ import AutoI18n, {
   EmptyTranslator,
 } from 'vite-auto-i18n-plugin';
 import Pages from 'vite-plugin-pages';
-import Layouts from 'vite-plugin-vue-layouts';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
-import Inspect from 'vite-plugin-inspect';
 import { visualizer } from 'rollup-plugin-visualizer';
 import viteCompression from 'vite-plugin-compression';
-import { VitePWA } from 'vite-plugin-pwa';
 import { fileURLToPath, URL } from 'node:url';
-import ops from 'vite-plugin-ops';
 
 const createTranslator = (env: Record<string, string>) => {
   const translatorType = env.VITE_AUTO_I18N_TRANSLATOR || 'google';
@@ -101,7 +97,6 @@ export default defineConfig(({ mode }) => {
         importMode: 'async',
         routeStyle: 'nuxt',
       }),
-      Layouts(),
       AutoImport({
         imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
         dts: 'src/auto-imports.d.ts',
@@ -113,7 +108,6 @@ export default defineConfig(({ mode }) => {
         resolvers: [IconsResolver({ componentPrefix: 'i' })],
       }),
       Icons({ compiler: 'vue3' }),
-      Inspect(),
       viteCompression({ algorithm: 'brotliCompress' }),
       viteCompression({ algorithm: 'gzip' }),
       visualizer({
@@ -122,36 +116,7 @@ export default defineConfig(({ mode }) => {
         brotliSize: true,
         open: false,
       }) as any,
-      VitePWA({
-        registerType: 'autoUpdate',
-        includeAssets: ['favicon.svg'],
-        manifest: {
-          name: 'SuiKit Base',
-          short_name: 'SuiKit',
-          description: 'Vue 3 base template with Vite + Tailwind + Pinia + Alova',
-          theme_color: '#0f172a',
-          background_color: '#0f172a',
-          display: 'standalone',
-          scope: '/',
-          start_url: '/',
-          icons: [
-            { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
-            { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
-            {
-              src: 'pwa-512x512-maskable.png',
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'any maskable',
-            },
-          ],
-        },
-        workbox: {
-          globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
-          navigateFallback: '/offline.html',
-        },
-      }),
       createI18nPlugin(env),
-      ops({ strategy: 'conservative' }),
     ],
     resolve: {
       alias: {
