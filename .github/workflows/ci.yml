@@ -17,16 +17,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
       - name: Code Quality Check
-        run: yarn lint && yarn typecheck
+        run: npm run lint && npm run typecheck
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Upload dist artifact
         uses: actions/upload-artifact@v4
